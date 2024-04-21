@@ -22,7 +22,7 @@
     margin-right: auto;
   }
   #navbar {
-    --navbar-height: 9%;
+    --navbar-height: 10%;
     position: relative;
     height: var(--navbar-height);
     background-color: var(--navbar-bg-color);
@@ -54,7 +54,7 @@
     text-decoration: none;
     display: flex;
     font-weight: 400;
-    font-size: 120%;
+    font-size: 150%;
     align-items: center;
   }
   
@@ -75,9 +75,9 @@
   }
   .navbar-logo {
     background-color: var(--navbar-text-color-focus);
-    border-radius: 50px;
-    width: 5vw;
-    height: 5vw;
+    border-radius: 100px;
+    width: 7vw;
+    height: 7vw;
     margin-right: 0.5em;
   }
   #navbar-toggle {
