@@ -199,8 +199,8 @@
 
 .input-container {
     position: relative;
-    margin-left: 2.5vw;
-    margin-right: 2.5vw;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .input-field {
@@ -214,7 +214,7 @@
 
 .input-label {
     position: absolute;
-    top: -0.3vw;
+    top: 0.2rem;
     left: 2vw;
     color: #999;
     font-size: 1.3vw;
