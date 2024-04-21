@@ -74,6 +74,7 @@
     background-color: var(--navbar-bg-contrast);
   }
   .navbar-logo {
+    background-image: url();
     background-color: var(--navbar-text-color-focus);
     border-radius: 100px;
     width: 6vw;
@@ -211,7 +212,13 @@
     border-radius: 30px;
     background-color: #f9f9f9;
 }
-
+.btn{
+  font-size: 1.3vw;
+  width: 15%;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  border-radius: 30px;
+}
 .input-label {
     position: absolute;
     top: 0.2rem;
@@ -221,7 +228,7 @@
     transition: top 0.3s, font-size 0.3s;
 }
 input[type="date"] {
-  font-size: 1.3vw; /* Устанавливаем желаемый размер текста */
+  font-size: 1.3vw; 
 }
 input[type="number"]{
   font-size: 1.3vw;
