@@ -94,9 +94,9 @@
   }
   .icon-bar {
     display: block;
-    width: 4vw;
-    height: 0.7vw;
-    margin: 0.1vw;
+    width: 0.8rem;
+    height: 0.2rem;
+    margin: 0.1rem;
     background-color: var(--navbar-text-color);
   }
   #navbar-toggle:is(:focus, :hover) .icon-bar {
@@ -105,7 +105,7 @@
   #navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
     position: absolute;
     margin: 0;
-    width: 5vw;
+    width: 1.2rem;
   }
   #navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
     transform: rotate(45deg);
@@ -275,7 +275,7 @@ button:hover {
 	text-align: center;
 	overflow: hidden;
 	position: relative;
-    margin-top: -5.2vw;
+    margin-top: -7vw;
 }
 .layer {
 	height: 100%;
