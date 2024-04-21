@@ -31,7 +31,7 @@
     margin-right: auto;
   }
   #navbar {
-    --navbar-height: 12%;
+    --navbar-height: 14%;
     position: absolute;
     height: var(--navbar-height);
     background-color: var(--navbar-bg-color);
