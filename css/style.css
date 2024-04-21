@@ -92,6 +92,7 @@
   .img{
       width: 6vw;
       border-radius: 100px;
+      margin-right: 0.5em;
     }
   }
   #navbar-toggle {
@@ -281,7 +282,6 @@ button:hover {
 	z-index: 100;
 	width: 100%;
 	height: calc(var(--index) * 10);
-	background-image: url(../img/ground.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -293,8 +293,9 @@ button:hover {
 	justify-content: center;
 	text-align: center;
 	overflow: hidden;
-	position: relative;
-    margin-top: -7vw;
+	position:relative;
+  margin-top: -11%;
+
 }
 .layer {
 	height: 100%;
@@ -305,6 +306,7 @@ button:hover {
 	will-change: transform;
 	z-index: 2;
 	transition: var(--transition);
+  
 }
 .layers__base {
 	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
@@ -315,16 +317,6 @@ button:hover {
 }
 .layers__front {
 	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
-}
-.layer__header {
-	z-index: 1;
-	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
-	transition: var(--transition);
-	will-change: transform;
-	text-transform: uppercase;
-	font-weight: 900;
-	color: var(--text);
-	text-shadow: 0 0 15px #9d822b;
 }
 .hotel-description {
   display: flex;
