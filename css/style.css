@@ -1,3 +1,13 @@
+
+@font-face {
+	font-family: raleway_f;
+	src: url(/fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(/fonts/raleway-black.woff2);
+	font-weight: 900;
+}
 :root {
     /* --navbar-bg-color:#977c63 ; */
     --navbar-text-color: hsl(0, 0%, 85%);
@@ -11,7 +21,6 @@
   }
   body {
     height: 110vh;
-    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
   }
   .container {
@@ -74,12 +83,16 @@
     background-color: var(--navbar-bg-contrast);
   }
   .navbar-logo {
-    background-image: url();
     background-color: var(--navbar-text-color-focus);
     border-radius: 100px;
     width: 6vw;
     height: 6vw;
     margin-right: 0.5em;
+
+  .img{
+      width: 6vw;
+      border-radius: 100px;
+    }
   }
   #navbar-toggle {
     cursor: pointer;
