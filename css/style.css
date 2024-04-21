@@ -63,7 +63,7 @@
     text-decoration: none;
     display: flex;
     font-weight: 400;
-    font-size: 150%;
+    font-size: 130%;
     align-items: center;
   }
   
@@ -148,16 +148,15 @@
   }
   .navbar-links {
     list-style: none;
-    position: absolute;
+
     background-color: var(--navbar-bg-color);
     display: flex;
-    flex-direction: column;
     align-items: center;
     left: 0;
     right: 0;
-    margin: 1.4rem;
+    margin: 2rem;
     border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   }
   
   #navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
@@ -187,7 +186,7 @@
       box-shadow: none;
       position: static;
       flex-direction: row;
-      width: 100%;
+      width: 140%;
       height: 100%;
 
     }
