@@ -213,8 +213,8 @@
     background-color: #f9f9f9;
 }
 .btn{
-  font-size: 1.3vw;
-  width: 15%;
+  font-size: 1.3rem;
+  width: 11rem;
   padding: 1vw;
   margin-bottom: 1vw;
   border-radius: 30px;
@@ -228,10 +228,10 @@
     transition: top 0.3s, font-size 0.3s;
 }
 input[type="date"] {
-  font-size: 1.3vw; 
+  font-size: 1.3rem; 
 }
 input[type="number"]{
-  font-size: 1.3vw;
+  font-size: 1.3rem;
 }
 button {
     padding: 1vw 4vw 1vw 5vw;
@@ -314,6 +314,53 @@ button:hover {
 	color: var(--text);
 	text-shadow: 0 0 15px #9d822b;
 }
+.hotel-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.description-text {
+  margin-right: 5%;
+}
+
+.description-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.description-text p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.description-image img {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hotel-description {
+      flex-direction: row;
+  }
+
+  .description-text {
+      width: 50%;
+  }
+
+  .description-image {
+      width: 50%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 .footer {
   background-color: #333;
   color: #fff;
