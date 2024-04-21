@@ -22,7 +22,7 @@
     margin-right: auto;
   }
   #navbar {
-    --navbar-height: 5.2vw;
+    --navbar-height: 9%;
     position: relative;
     height: var(--navbar-height);
     background-color: var(--navbar-bg-color);
@@ -40,11 +40,11 @@
   .navbar-container {
     display: flex;
     justify-content: space-between;
-    height: 5vw;
+    height: 100%;
     align-items: center;
   }
   .navbar-item {
-    margin: 0.1vw;
+    margin: 0.1%;
     width: 100%;
   }
   
@@ -54,7 +54,7 @@
     text-decoration: none;
     display: flex;
     font-weight: 400;
-    font-size: 1.7vw;
+    font-size: 120%;
     align-items: center;
   }
   
@@ -75,7 +75,7 @@
   }
   .navbar-logo {
     background-color: var(--navbar-text-color-focus);
-    border-radius: 5vw;
+    border-radius: 50px;
     width: 5vw;
     height: 5vw;
     margin-right: 0.5em;
