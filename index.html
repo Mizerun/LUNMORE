@@ -48,14 +48,16 @@
           </div>
         </div>
       </nav></div>
-      <head class="main-header">
+      <header class="main-header">
         <div class="layers">
             <div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
             <div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
             <div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>   
         </div>
-    </head>
-    <div class="container mt-5 custom-container">
+    </header>
+
+    
+    <div class="container  custom-container">
         <h1 class="text-center w-100">Бронирование номеров</h1>
         <div class="form-group">
             <label for="check-in" class="form-label">Дата заезда</label>
@@ -73,75 +75,329 @@
             <button type="submit" class="btn btn-primary">Забронировать</button>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./img/layer-front.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./img/logo.png" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Предыдущий</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Следующий</span>
-            </button>
-          </div>
-        <div class="card-body">
-          <h5 class="card-title">Заголовок карточки</h5>
-          <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
-          <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+      <div class="w-100">
+        <div class="wrapper-nav">
+            <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist" style="justify-content:center;">
+                <a class="nav-item nav-link pointer active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Эконом</a>
+                <a class="nav-item nav-link pointer" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Стандарт</a>
+                <a class="nav-item nav-link pointer" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Люкс</a>
+            </nav>
         </div>
-      </div>
-
-
-
-     
-
-      <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6">
-                <h4>Оставить комментарий</h4>
-                <form id="commentForm">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Имя</label>
-                        <input type="text" class="form-control" id="name" required>
+        
+        <div class="tab-content p-3" id="myTabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+              <div class="row">
+                <div class="col-md-12 offset-md-0">
+                    <div class="d-md-flex align-items-md-start">
+                        <h3 class="col-md-4 col-12 mb-md-0" style="color: orange; padding:1.5rem;">Бюджетные номера</h3>
+                        <p class="col-md-8 col-12">Погрузитесь в мир комфорта и экономии с нашими бюджетными номерами, идеальным выбором для ценителей удобства по доступной цене. Хотите сэкономить, не потеряв в качестве сервиса? Тогда наши уютные и функционально обустроенные номера станут вашим идеальным выбором для пребывания. Отдыхайте выгодно с нами и наслаждайтесь каждым моментом вашего пребывания!</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="comment" class="form-label">Комментарий</label>
-                        <textarea class="form-control" id="comment" rows="3" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="photo" class="form-label">Загрузить фото</label>
-                        <input type="file" class="form-control" id="photo" accept="image/*" onchange="previewImage(event)">
-                        <img id="preview" class="preview-img" src="#" alt="Image preview" style="display: none;">
-                    </div>
-                    <div class="center-button">
-                        <button type="submit" class="btn btn-primary">Отправить комментарий</button>
-                    </div>
-                </form>
+                </div>
             </div>
-            <div class="col-md-6">
-                <div class="comment-container" id="comments">
-                    <!-- Existing comments will be loaded here -->
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 280px;">
+                      <div class="card" style="width: 18rem;">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/layer-front.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/logo.png" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Следующий</span>
+                            </button>
+                          </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Заголовок карточки</h5>
+                          <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                          <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 280px;">
+                      <div class="card" style="width: 18rem;">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/layer-front.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/logo.png" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Следующий</span>
+                            </button>
+                          </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Заголовок карточки</h5>
+                          <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                          <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 280px;">
+                      <div class="card" style="width: 18rem;">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/layer-front.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/logo.png" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Следующий</span>
+                            </button>
+                          </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Заголовок карточки</h5>
+                          <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                          <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+              <p>"Наши стандартные номера - это идеальный выбор для комфортного и уютного проживания во время вашего отдыха или деловой поездки. Оформленные в современном стиле, оборудованные всем необходимым для вашего удобства, эти номера предлагают приятное сочетание функциональности и уюта. Проведите время с пользой, останавливаясь в наших стандартных номерах, где каждая деталь заботливо продумана для вашего комфорта."</p>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 280px;">
+                      <div class="card" style="width: 18rem;">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/layer-front.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/logo.png" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Следующий</span>
+                            </button>
+                          </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Заголовок карточки</h5>
+                          <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                          <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 280px;">
+                      <div class="card" style="width: 18rem;">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/layer-front.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/logo.png" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Следующий</span>
+                            </button>
+                          </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Заголовок карточки</h5>
+                          <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                          <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 280px;">
+                      <div class="card" style="width: 18rem;">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/layer-front.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/logo.png" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Следующий</span>
+                            </button>
+                          </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Заголовок карточки</h5>
+                          <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                          <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+              <p>"Погрузитесь в атмосферу роскоши и изысканности с нашими люкс номерами. Идеальный выбор для тех, кто ценит роскошь и комфорт высокого уровня. Наши просторные и элегантно оформленные люкс номера обеспечат вам незабываемый отдых и уютную обстановку. Наслаждайтесь привилегированным обслуживанием, изысканным дизайном интерьера и широким спектром удобств в наших люкс номерах, чтобы сделать ваше пребывание по-настоящему особенным."</p>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 280px;">
+                      <div class="card" style="width: 18rem;">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/layer-front.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/logo.png" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Следующий</span>
+                            </button>
+                          </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Заголовок карточки</h5>
+                          <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                          <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 280px;">
+                      <div class="card" style="width: 18rem;">
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/layer-front.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/logo.png" class="d-block w-100" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Следующий</span>
+                            </button>
+                          </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Заголовок карточки</h5>
+                          <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                          <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="col-md-4">
+                      <div class="card mb-3" style="max-width: 280px;">
+                        <div class="card" style="width: 18rem;">
+                          <div id="carouselExample" class="carousel slide">
+                              <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <img src="./img/layer-front.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="./img/layer-middle.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="./img/logo.png" class="d-block w-100" alt="...">
+                                </div>
+                              </div>
+                              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Предыдущий</span>
+                              </button>
+                              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Следующий</span>
+                              </button>
+                            </div>
+                          <div class="card-body">
+                            <h5 class="card-title">Заголовок карточки</h5>
+                            <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                            <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    
        <footer class="footer text-center">
         <div class="container">
             <div class="row">
@@ -217,6 +473,5 @@
             }
         }
     </script>
-    1
 </body>
 </html>
