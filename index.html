@@ -135,15 +135,7 @@
             </div>
             <div class="col-md-6">
                 <div class="comment-container" id="comments">
-                    <div class="comment">
-                        <strong>Иван Петров</strong> (ivan@example.com): Отличный сайт! <br>
-                        <img src="https://via.placeholder.com/150" alt="Uploaded photo" class="preview-img">
-                    </div>
-                    <div class="comment">
-                        <strong>Марина Сидорова</strong> (marina@example.com): Прекрасный дизайн! <br>
-                        <img src="https://via.placeholder.com/150" alt="Uploaded photo" class="preview-img">
-                    </div>
-                    <!-- Дополнительные комментарии -->
+                    <!-- Existing comments will be loaded here -->
                 </div>
             </div>
         </div>
@@ -171,5 +163,59 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.getElementById("commentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const commentText = document.getElementById("comment").value;
+            const photo = document.getElementById("preview").src;
+
+            const newComment = `
+            <div class="comment-box">
+                <strong>${name}</strong> (${email}): ${commentText}
+                <br>
+                <img src="${photo}" alt="Uploaded photo" class="preview-img">
+            </div>`;
+
+            const commentsContainer = document.getElementById("comments");
+            commentsContainer.insertAdjacentHTML("beforeend", newComment);
+
+            // Clear form fields
+            document.getElementById("commentForm").reset();
+            document.getElementById("preview").style.display = "none";
+
+            // Save comment to localStorage
+            const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
+            existingComments.push(newComment);
+            localStorage.setItem("comments", JSON.stringify(existingComments));
+        });
+
+        // Load comments from localStorage when the page loads
+        window.addEventListener("DOMContentLoaded", function() {
+            const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
+            const commentsContainer = document.getElementById("comments");
+
+            existingComments.forEach(comment => {
+                commentsContainer.insertAdjacentHTML("beforeend", comment);
+            });
+        });
+
+        function previewImage(event) {
+            const preview = document.getElementById("preview");
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                preview.src = reader.result;
+                preview.style.display = "block";
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </body>
 </html>
