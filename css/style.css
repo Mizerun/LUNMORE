@@ -8,7 +8,16 @@ body {
 	font-family: raleway_f, sans-serif;
 	line-height: 1.55;
 }
-
+@font-face {
+	z-index: 9999;
+	font-family: raleway_f;
+	src: url(/fonts/raleway-black.woff2);
+}
+@font-face {
+	z-index: 9999;
+	font-family: raleway_f;
+	src: url(/fonts/raleway-regular.woff2);
+}
 .layers {
 	height: 100vh;
 	display: flex;
