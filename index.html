@@ -55,6 +55,24 @@
             <div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>   
         </div>
     </head>
+    <div class="container mt-5 custom-container">
+        <h1 class="text-center w-100">Бронирование номеров</h1>
+        <div class="form-group">
+            <label for="check-in" class="form-label">Дата заезда</label>
+            <input type="date" class="form-control" id="check-in" required>
+        </div>
+        <div class="form-group">
+            <label for="check-out" class="form-label">Дата выезда</label>
+            <input type="date" class="form-control" id="check-out" required>
+        </div>
+        <div class="form-group">
+            <label for="guests" class="form-label">Количество гостей</label>
+            <input type="number" class="form-control" id="guests" required>
+        </div>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Забронировать</button>
+        </div>
+    </div>
     <div class="card" style="width: 18rem;">
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
@@ -83,5 +101,75 @@
           <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
         </div>
       </div>
+
+
+
+     
+
+      <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Оставить комментарий</h4>
+                <form id="commentForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="comment" class="form-label">Комментарий</label>
+                        <textarea class="form-control" id="comment" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="photo" class="form-label">Загрузить фото</label>
+                        <input type="file" class="form-control" id="photo" accept="image/*" onchange="previewImage(event)">
+                        <img id="preview" class="preview-img" src="#" alt="Image preview" style="display: none;">
+                    </div>
+                    <div class="center-button">
+                        <button type="submit" class="btn btn-primary">Отправить комментарий</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="comment-container" id="comments">
+                    <div class="comment">
+                        <strong>Иван Петров</strong> (ivan@example.com): Отличный сайт! <br>
+                        <img src="https://via.placeholder.com/150" alt="Uploaded photo" class="preview-img">
+                    </div>
+                    <div class="comment">
+                        <strong>Марина Сидорова</strong> (marina@example.com): Прекрасный дизайн! <br>
+                        <img src="https://via.placeholder.com/150" alt="Uploaded photo" class="preview-img">
+                    </div>
+                    <!-- Дополнительные комментарии -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+       <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Контакты</h5>
+                    <p>Телефон: +1 123 456 789</p>
+                    <p>Email: info@lunmorehotel.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Подписывайтесь</h5>
+                    <a href="#" class="me-2">Facebook</a>
+                    <a href="#" class="me-2">Twitter</a>
+                    <a href="#" class="me-2">Instagram</a>
+                    <a href="#" class="me-2">LinkedIn</a>
+                </div>
+                <div class="col-md-4">
+                    <p>&copy; 2024 Hotel Lunmore. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
