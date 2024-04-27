@@ -23,3 +23,11 @@ body{z-index:999;background-color:rgba(165,104,53,.281)}
 .center-button{display:flex;justify-content:center}
 .comment-container{margin-top:20px;padding:10px;border:1px solid #ccc;border-radius:5px;max-height:300px;overflow:auto}
 .comment{margin-bottom:10px;padding:10px;border:1px solid #e9ecef;border-radius:5px;background-color:#f8f9fa}
+.gg{margin-top: 2.5rem; background-color: rgb(121, 68, 26);}
+.hotel-info {margin-bottom: 20px;}
+.custom-info {margin-bottom: 20px;}
+.service-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
