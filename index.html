@@ -26,19 +26,22 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="#">Главная</a>
+                <a class="nav-link active text-white" aria-current="page" href="#bron">О Нас</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">О Нас</a>
+                <a class="nav-link text-white" href="#yslygi">Услуги</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Услуги</a>
+                <a class="nav-link text-white" href="#numbers">Номера</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Отзывы</a>
+                <a class="nav-link text-white" href="#contacts">Контакты</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Забронировать номер</a>
+                <a class="nav-link text-white" href="#comment">Отзывы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="broni.html">Забронировать номер</a>
               </li>
             </ul>
 
@@ -69,11 +72,11 @@
             <input type="number" class="form-control" id="guests" required>
         </div>
         <div class="btn-group">
-            <button type="submit" class="btn btn-primary">Забронировать</button>
+            <button type="submit" class="btn btn-primary" onclick="window.location.href='broni.html'">Забронировать</button>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="bron">
       <div class="row">
         <h2>Об отеле</h2>
         <div class="col-md-6 hotel-info">
@@ -106,7 +109,7 @@
     </div>
 
 
-    <div class="container">
+    <div class="container" id="yslygi">
       <div class="row">
         <div class="col-md-12">
           <div class="service-section">
@@ -136,7 +139,7 @@
     </div>
 
 
-      <div class="w-100">
+      <div class="w-100" id="numbers">
         <div class="wrapper-nav">
             <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist" style="justify-content:center;">
                 <a class="nav-item nav-link pointer active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Эконом</a>
@@ -459,7 +462,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="contacts">
       <h3>Контакты</h3>
       <div class="row">
         <div class="col-md-4 contact-info">Телефон: +7 (XXX) XXX-XX-XX</div>
@@ -467,7 +470,7 @@
         <div class="col-md-4 contact-info">Местоположение: Адрес отеля, Город, Страна</div>
       </div>
     </div>
-    <div class="container mt-5">
+    <div class="container mt-5" id="comment">
       <div class="row">
           <div class="col-md-6">
               <h4>Оставить комментарий</h4>
