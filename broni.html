@@ -23,8 +23,7 @@ background: linear-gradient(133deg, rgba(177,145,69,0.8262954840139181) 4%, rgba
 <body>
     <div class="goga">
         <div class="container ded ">
-            <a href="index.html" class="naz text-black">Вернуться на Главную</a>
-            <img src="/3-13.jpg" alt="" onclick="">
+            <button id="goBackButton" class="btn btn-primary" style="margin-top: 1%;">вернуться на главную</button>
             <h1 class="text-center">Бронирование номеров</h1>
             
             <div class="tab-content text-center">
@@ -155,7 +154,11 @@ function calculateTotalPrice() {
                 document.getElementById('check-out').value = checkOutDateParam;
                 document.getElementById('guests').value = guestsCountParam;
             }
-            
+            const goBackButton = document.getElementById('goBackButton');
+
+goBackButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
         </script>
 </body>
 </html>
