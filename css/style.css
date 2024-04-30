@@ -6,7 +6,7 @@ body{z-index:999;background-color:rgba(165,104,53,.281)}
 .layers__middle{transform:translate3d(0,calc(var(--scrollTop)/ 2.5),0)}
 .layers__front{transform:translate3d(0,calc(var(--scrollTop)/ 5.7),0)}
 .layer__header{z-index:1;transform:translate3d(0,calc(var(--scrollTop)/ 2),0);transition:var(--transition);will-change:transform;text-transform:uppercase;font-weight:900;color:var(--text);text-shadow:0 0 15px #9d822b}
-.main-header{position:relative}
+.main-header{position:relative;}
 .main-header::after{content:'';position:absolute;z-index:100;width:100%;height:calc(var(--index) * 2);background-image:url(/img/grisha.png);background-size:cover;background-repeat:no-repeat;background-position:center;bottom:calc(var(--index) * -1)}
 .layers__title{font-size:calc(var(--index) * 2.65);letter-spacing:calc(var(--index)/ 2.25)}
 .content{will-change:transform}
@@ -31,3 +31,4 @@ body{z-index:999;background-color:rgba(165,104,53,.281)}
 .gf{z-index:104;position:relative; color:#000000;}
 .foto{position:relative;}
 .foto::after{content:'';position:absolute;z-index:100;width:100%;height:calc(var(--index) * 4.5);background-image:url(/img/grisha.png);background-size:cover;background-repeat:no-repeat;background-position:center;bottom:calc(var(--index) * -1)}
+.ded{ border: 1px solid black;}
