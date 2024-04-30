@@ -8,22 +8,14 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <style>
-           body {
-            background-image: url('./img/haha.png');
-            background-size: cover;
-            background-attachment: fixed;
-            color: rgb(0, 0, 0);
-            text-shadow: 1px 1px 1px #afafaf;
-        }
-        .container{background: rgb(177,145,69);
-background: linear-gradient(133deg, rgba(177,145,69,0.8262954840139181) 4%, rgba(209,142,98,0.7590685932576156) 45%, rgba(216,192,170,0.7450629910167192) 98%);}
+           body {background-image: url('./img/haha.png');background-size: cover;background-attachment: fixed;color: rgb(0, 0, 0);text-shadow: 1px 1px 1px #afafaf;}
+        .container{background: rgb(177,145,69);background: linear-gradient(133deg, rgba(177,145,69,0.8262954840139181) 4%, rgba(209,142,98,0.7590685932576156) 45%, rgba(216,192,170,0.7450629910167192) 98%);}
 </style>
 </head>
-
 <body>
     <div class="goga">
         <div class="container ded ">
-            <button id="goBackButton" class="btn btn-primary" style="margin-top: 1%;">вернуться на главную</button>
+            <button id="goBackButton" class="btn btn-primary btn-primary1" style="margin-top: 1%;">вернуться на главную</button>
             <h1 class="text-center">Бронирование номеров</h1>
             
             <div class="tab-content text-center">
@@ -50,20 +42,36 @@ background: linear-gradient(133deg, rgba(177,145,69,0.8262954840139181) 4%, rgba
                         </select>
                     </div>
                 </div>
-                
- 
-</div>
+            </div>
 <div id="services" class="tab-pane">
     <h2>Выбор услуг</h2>
     <div class="form-group">
         <label>Выберите услуги:</label>
-        <div>
-            <label><input type="checkbox" name="services" value="wifi" data-price="10" onchange="calculateTotalPrice()"> Wi-Fi</label><br>
-            <label><input type="checkbox" name="services" value="breakfast" data-price="15" onchange="calculateTotalPrice()"> Завтрак</label><br>
-            <label><input type="checkbox" name="services" value="parking" data-price="20" onchange="calculateTotalPrice()"> Парковка</label><br>
-            <label><input type="checkbox" name="services" value="spa" data-price="30" onchange="calculateTotalPrice()"> СПА</label><br>
-            <label><input type="checkbox" name="services" value="gym" data-price="25" onchange="calculateTotalPrice()"> Фитнес-зал</label><br>
-            <label><input type="checkbox" name="services" value="room-service" data-price="20" onchange="calculateTotalPrice()"> Обслуживание в номере</label><br>
+        <div class="container">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="services" id="wifi" value="wifi" data-price="10" onchange="calculateTotalPrice()">
+                <label class="form-check-label" for="wifi">Wi-Fi</label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="services" id="breakfast" value="breakfast" data-price="15" onchange="calculateTotalPrice()">
+                <label class="form-check-label" for="breakfast">Завтрак</label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="services" id="parking" value="parking" data-price="20" onchange="calculateTotalPrice()">
+                <label class="form-check-label" for="parking">Парковка</label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="services" id="spa" value="spa" data-price="30" onchange="calculateTotalPrice()">
+                <label class="form-check-label" for="spa">СПА</label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="services" id="gym" value="gym" data-price="25" onchange="calculateTotalPrice()">
+                <label class="form-check-label" for="gym">Фитнес-зал</label>
+            </div>
         </div>
     </div>
 </div>
@@ -102,16 +110,24 @@ function calculateTotalPrice() {
     });
     
     const checkInDate = new Date(document.getElementById('check-in').value);
-    const checkOutDate = new Date(document.getElementById('check-out').value);    
+    const checkOutDate = new Date(document.getElementById('check-out').value); 
+    
+    const currentDate = new Date();
+    
+    if (checkInDate < currentDate || checkOutDate < currentDate) {
+        alert('Пожалуйста, выберите будущую дату заезда и отъезда.');
+        return;
+    }
+    
     const stayDuration = Math.max(1, Math.round((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)));
     
     let guestsCount = +document.getElementById('guests').value || 1;
-    const extraGuests = Math.max(0, guestsCount - 4); 
+    const extraGuests = Math.max(0, guestsCount - 3); 
     const extraGuestsFee = extraGuests * 3;
     
     const totalPrice = stayDuration * (roomPrice + servicesPrice) + extraGuestsFee;
     
-    document.getElementById('total-price').textContent = `Забронировать. Цена: $${totalPrice}`;
+    document.getElementById('total-price').textContent = `Забронировать. Цена: $${isNaN(totalPrice) ? '0' : totalPrice} `;
 }
     
         function submitBooking() {
