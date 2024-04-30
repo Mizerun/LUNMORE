@@ -1,34 +1,192 @@
-:root{--index:calc(1vw + 1vh);--transition:transform .75s cubic-bezier(.075, .5, 0, 1)}
-body{z-index:999;background-color:rgba(165,104,53,.281)}
-.layers{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;position:relative}
-.layer{height:100%;width:100%;position:absolute;background-size:cover;background-position:center;will-change:transform;z-index:2;transition:var(--transition)}
-.layers__base{transform:translate3d(0,calc(var(--scrollTop)/ 1.6),0);z-index:0}
-.layers__middle{transform:translate3d(0,calc(var(--scrollTop)/ 2.5),0)}
-.layers__front{transform:translate3d(0,calc(var(--scrollTop)/ 5.7),0)}
-.layer__header{z-index:1;transform:translate3d(0,calc(var(--scrollTop)/ 2),0);transition:var(--transition);will-change:transform;text-transform:uppercase;font-weight:900;color:var(--text);text-shadow:0 0 15px #9d822b}
-.main-header{position:relative;}
-.main-header::after{content:'';position:absolute;z-index:100;width:100%;height:calc(var(--index) * 2);background-image:url(/img/grisha.png);background-size:cover;background-repeat:no-repeat;background-position:center;bottom:calc(var(--index) * -1)}
-.layers__title{font-size:calc(var(--index) * 2.65);letter-spacing:calc(var(--index)/ 2.25)}
-.content{will-change:transform}
-.copy{position:absolute;bottom:calc(var(--index) * 2.5);opacity:.45;font-size:calc(var(--index) * .75);letter-spacing:calc(var(--index)/ 37.5)}
-.mynav{z-index:999;position:absolute;width:100%;color:#ca7a2f}
-.custom-container{display:flex;flex-wrap:wrap;justify-content:space-between;padding:0 20px}
-.form-group{flex:0 0 calc(33.33% - 10px);margin-bottom:10px}
-@media (max-width:768px){.form-group{flex:0 0 100%;margin-right:0}}
-.btn-group{flex:0 0 100%}.btn-group button{width:100%}
-.comment-box{margin-top:20px;padding:10px;border:1px solid #ccc;border-radius:5px}
-.preview-img{max-width:100%;margin-top:10px}
-.comment-box{margin-top:20px;padding:10px;border:1px solid #ccc;border-radius:5px}
-.preview-img{max-width:100%;margin-top:10px}
-.center-button{display:flex;justify-content:center}
-.comment-container{margin-top:20px;padding:10px;border:1px solid #ccc;border-radius:5px;max-height:300px;overflow:auto}
-.comment{margin-bottom:10px;padding:10px;border:1px solid #e9ecef;border-radius:5px;background-color:#f8f9fa}
-.gg{margin-top: 2.5rem; background-color: rgb(121, 68, 26);}
-.hotel-info {margin-bottom: 20px;}
-.custom-info {margin-bottom: 20px;}
-.service-item {border: 1px solid #ccc;padding: 10px;margin-bottom: 10px;}
-.fg{margin-top: 3%;}
-.gf{z-index:104;position:relative; color:#000000;}
-.foto{position:relative;}
-.foto::after{content:'';position:absolute;z-index:100;width:100%;height:calc(var(--index) * 4.5);background-image:url(/img/grisha.png);background-size:cover;background-repeat:no-repeat;background-position:center;bottom:calc(var(--index) * -1)}
-.ded{ border: 1px solid black;}
+:root {
+  --index: calc(1vw + 1vh);
+  --transition: all 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+}
+
+body {
+  z-index: 999;
+  background-color: rgba(165, 104, 53, 0.281);
+}
+
+.layers {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.layers__base {
+  transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+  z-index: 0;
+}
+
+.layers__middle {
+  transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.layers__front {
+  transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+
+.layer__header {
+  z-index: 1;
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  transition: var(--transition);
+  will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--text);
+  text-shadow: 0 0 15px #9d822b;
+}
+
+.main-header {
+  position: relative;
+}
+
+.main-header::after {
+  content: '';
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: calc(var(--index) * 2);
+  background-image: url(/img/grisha.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: calc(var(--index) * -1);
+}
+
+.layers__title {
+  font-size: calc(var(--index) * 2.65);
+  letter-spacing: calc(var(--index) / 2.25);
+}
+
+.copy {
+  position: absolute;
+  bottom: calc(var(--index) * 2.5);
+  opacity: 0.45;
+  font-size: calc(var(--index) * 0.75);
+  letter-spacing: calc(var(--index) / 37.5);
+}
+
+.mynav {
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  color: #ca7a2f;
+}
+
+.custom-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.form-group {
+  flex: 0 0 calc(33.33% - 10px);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .form-group {
+      flex: 0 0 100%;
+      margin-right: 0;
+  }
+}
+
+.btn-group {
+  flex: 0 0 100%;
+}
+
+.btn-group button {
+  width: 100%;
+}
+
+.comment-box,
+.preview-img {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-container {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.gg {
+  margin-top: 2.5rem;
+  background-color: rgb(121, 68, 26);
+}
+
+.hotel-info,
+.custom-info,
+.service-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.fg {
+  margin-top: 3%;
+}
+
+.gf {
+  z-index: 104;
+  position: relative;
+  color: #000;
+}
+
+.foto {
+  position: relative;
+}
+
+.foto::after {
+  content: '';
+  position: absolute;
+  z-index: 100;
+  width: 100rem;
+  height: 12rem;
+  background-image: url(/img/grisha.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: calc(var(--index) * -3);
+}
+
+.ded {
+  border: 1px solid black;
+}
