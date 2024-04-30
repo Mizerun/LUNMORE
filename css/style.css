@@ -26,8 +26,8 @@ body{z-index:999;background-color:rgba(165,104,53,.281)}
 .gg{margin-top: 2.5rem; background-color: rgb(121, 68, 26);}
 .hotel-info {margin-bottom: 20px;}
 .custom-info {margin-bottom: 20px;}
-.service-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
+.service-item {border: 1px solid #ccc;padding: 10px;margin-bottom: 10px;}
+.fg{margin-top: 3%;}
+.gf{z-index:104;position:relative; color:#000000;}
+.foto{position:relative;}
+.foto::after{content:'';position:absolute;z-index:100;width:100%;height:calc(var(--index) * 4.5);background-image:url(/img/grisha.png);background-size:cover;background-repeat:no-repeat;background-position:center;bottom:calc(var(--index) * -1)}

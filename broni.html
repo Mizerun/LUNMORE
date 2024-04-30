@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование номеров</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+<script src="./js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Бронирование номеров</h1>
+        
+        <!-- Форма выбора номеров -->
+        <div class="tab-content">
+            <div id="rooms" class="tab-pane active">
+                <h2>Выбор номера</h2>
+                <div class="form-group">
+                    <label for="room-type">Тип номера:</label>
+                    <select id="room-type" class="form-control">
+                        <optgroup label="Эконом">
+                            <option value="economy-room1">Эконом - Номер 1 ($50)</option>
+                            <option value="economy-room2">Эконом - Номер 2 ($60)</option>
+                            <option value="economy-room3">Эконом - Номер 3 ($70)</option>
+                        </optgroup>
+                        <optgroup label="Стандарт">
+                            <option value="standard-room1">Стандарт - Номер 1 ($100)</option>
+                            <option value="standard-room2">Стандарт - Номер 2 ($110)</option>
+                            <option value="standard-room3">Стандарт - Номер 3 ($120)</option>
+                        </optgroup>
+                        <optgroup label="Люкс">
+                            <option value="luxury-room1">Люкс - Номер 1 ($200)</option>
+                            <option value="luxury-room2">Люкс - Номер 2 ($220)</option>
+                            <option value="luxury-room3">Люкс - Номер 3 ($250)</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Форма выбора услуг -->
+            <div id="services" class="tab-pane">
+                <h2>Выбор услуг</h2>
+                <div class="form-group">
+                    <label>Выберите услуги:</label>
+                    <div>
+                        <label><input type="checkbox" name="services" value="wifi"> Wi-Fi</label><br>
+                        <label><input type="checkbox" name="services" value="breakfast"> Завтрак</label><br>
+                        <label><input type="checkbox" name="services" value="parking"> Парковка</label><br>
+                        <label><input type="checkbox" name="services" value="spa"> СПА</label><br>
+                        <label><input type="checkbox" name="services" value="gym"> Фитнес-зал</label><br>
+                        <label><input type="checkbox" name="services" value="room-service"> Обслуживание в номере</label><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- JavaScript -->
+    <script>
+        function submitBooking() {
+            const roomType = document.getElementById('room-type').value;
+            const services = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(service => service.value);
+
+            // Redirect URL
+            const redirectUrl = `broni.html?checkIn=2024-05-01&checkOut=2024-05-05&guests=2&room=${roomType}&services=${services}`;
+            window.location.href = redirectUrl;
+        }
+    </script>
+
+    <div class="container">
+        <div id="booking-details"></div>
+    </div>
+
+    <script>
+        // Get parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const checkInDate = urlParams.get('checkIn');
+        const checkOutDate = urlParams.get('checkOut');
+        const guestsCount = urlParams.get('guests');
+
+        // Show booking details on the page
+        const bookingDetailsDiv = document.getElementById('booking-details');
+        const bookingDetailsHTML = `
+            <p><strong>Дата заезда:</strong> ${checkInDate}</p>
+            <p><strong>Дата выезда:</strong> ${checkOutDate}</p>
+            <p><strong>Количество гостей:</strong> ${guestsCount}</p>
+        `;
+        bookingDetailsDiv.innerHTML = bookingDetailsHTML;
+    </script>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary" onclick="submitBooking()">Забронировать</button>
+        </div>
+    </div>
+
+
+</body>
+</html>
