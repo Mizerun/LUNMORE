@@ -17,7 +17,10 @@ body {
   overflow: hidden;
   position: relative;
 }
-
+.comment-box img {
+  max-width: 50%;
+  margin-right: 10px; 
+}
 .layer {
   height: 100%;
   width: 100%;
@@ -178,15 +181,14 @@ body {
   content: '';
   position: absolute;
   z-index: 100;
-  width: 100rem;
+  width: 100%;
   height: 12rem;
   background-image: url(/img/grisha.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  bottom: calc(var(--index) * -3);
+  bottom: calc(var(--index) * -2.5);
 }
-
 .ded {
   border: 1px solid black;
 }

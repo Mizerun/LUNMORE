@@ -114,17 +114,26 @@
         <div class="col-md-12">
           <div class="service-section">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 text-center">
                 <h3>Услуги</h3>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 text-left">
                 <p>Здесь можно добавить общее описание услуг в отеле.</p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <div class="service-item">Услуга 1</div>
+              <div class="container mt-5">
+                <div class="card" style="width: 18rem; ">
+                    <img src="wifi-image.jpg" class="card-img-top" alt="Wifi">
+                    <div class="card-body">
+                        <h5 class="card-title">Услуга Wifi</h5>
+                        <p class="card-text">Бесплатный Wi-Fi предоставляется всем гостям отеля.</p>
+                        <a href="#" class="btn btn-primary">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
               <div class="service-item">Услуга 2</div>
               <div class="service-item">Услуга 3</div>
             </div>
@@ -139,7 +148,7 @@
     </div>
 
 
-      <div class="w-100" id="numbers">
+      <div class="w-100 " id="numbers">
         <div class="wrapper-nav">
             <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist" style="justify-content:center;">
                 <a class="nav-item nav-link pointer active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Эконом</a>
@@ -525,57 +534,62 @@
             window.location.href = 'broni.html?checkIn=' + checkInDate + '&checkOut=' + checkOutDate + '&guests=' + guestsCount;
         }
         document.getElementById("commentForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+    event.preventDefault();
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const commentText = document.getElementById("comment").value;
-            const photo = document.getElementById("preview").src;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const commentText = document.getElementById("comment").value;
+    const photo = document.getElementById("preview").src;
 
-            const newComment = `
-            <div class="comment-box">
-                <strong>${name}</strong> (${email}): ${commentText}
-                <br>
-                <img src="${photo}" alt="Uploaded photo" class="preview-img">
-            </div>`;
+    const newComment = `
+    <div class="comment-box"> 
+        <strong>${name}</strong> (${email}): ${commentText}
+        <br>
+        <img src="${photo}" alt="Uploaded photo" class="preview-img">
+    </div>`;
 
-            const commentsContainer = document.getElementById("comments");
-            commentsContainer.insertAdjacentHTML("beforeend", newComment);
+    const commentsContainer = document.getElementById("comments");
+    commentsContainer.insertAdjacentHTML("beforeend", newComment);
 
-            // Clear form fields
-            document.getElementById("commentForm").reset();
-            document.getElementById("preview").style.display = "none";
+    // Clear form fields
+    document.getElementById("commentForm").reset();
+    document.getElementById("preview").style.display = "none";
 
-            // Save comment to localStorage
-            const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
-            existingComments.push(newComment);
-            localStorage.setItem("comments", JSON.stringify(existingComments));
-        });
+    // Save comment to localStorage
+    const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
+    existingComments.push(newComment);
+    localStorage.setItem("comments", JSON.stringify(existingComments));
 
-        // Load comments from localStorage when the page loads
-        window.addEventListener("DOMContentLoaded", function() {
-            const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
-            const commentsContainer = document.getElementById("comments");
+    // load and display all comments
+    commentsContainer.innerHTML = "";
+    existingComments.forEach(comment => {
+        commentsContainer.insertAdjacentHTML("beforeend", comment);
+    });
+});
 
-            existingComments.forEach(comment => {
-                commentsContainer.insertAdjacentHTML("beforeend", comment);
-            });
-        });
+window.addEventListener("DOMContentLoaded", function() {
+    const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
+    const commentsContainer = document.getElementById("comments");
 
-        function previewImage(event) {
-            const preview = document.getElementById("preview");
-            const file = event.target.files[0];
-            const reader = new FileReader();
+    existingComments.forEach(comment => {
+        commentsContainer.insertAdjacentHTML("beforeend", comment);
+    });
+});
 
-            reader.onload = function() {
-                preview.src = reader.result;
-                preview.style.display = "block";
-            };
+function previewImage(event) {
+    const preview = document.getElementById("preview");
+    const file = event.target.files[0];
+    const reader = new FileReader();
 
-            if (file) {
-                reader.readAsDataURL(file);
-            }
-        }
+    reader.onload = function() {
+        preview.src = reader.result;
+        preview.style.display = "block";
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
     </script>
 </body>
 </html>
