@@ -7,8 +7,7 @@
     <title>Бронирование номеров</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
-</head>
-<style>
+    <style>
            body {
             background-image: url('/img/haha.png'); /* Путь к вашему изображению заднего фона */
             background-size: cover;
@@ -19,105 +18,118 @@
         .container{background: rgb(177,145,69);
 background: linear-gradient(133deg, rgba(177,145,69,0.8262954840139181) 4%, rgba(209,142,98,0.7590685932576156) 45%, rgba(216,192,170,0.7450629910167192) 98%);}
 </style>
-<body>
-<div class="goga">
-    <div class="container ded ">
-        <h1 class="text-center">Бронирование номеров</h1>
-        
-        <!-- Форма выбора номеров -->
-        <div class="tab-content text-center">
-            <div id="rooms" class="tab-pane active">
-                <h2>Выбор номера</h2>
-                <div class="form-group">
-                    <label for="room-type">Тип номера:</label>
-                    <select id="room-type" class="form-control text-center">
-                        <optgroup label="Эконом">
-                            <option value="economy-room1" data-price="50">Эконом - Номер 1 ($50)</option>
-                            <option value="economy-room2" data-price="60">Эконом - Номер 2 ($60)</option>
-                            <option value="economy-room3" data-price="70">Эконом - Номер 3 ($70)</option>
-                        </optgroup>
-                        <optgroup label="Стандарт">
-                            <option value="standard-room1" data-price="100">Стандарт - Номер 1 ($100)</option>
-                            <option value="standard-room2" data-price="110">Стандарт - Номер 2 ($110)</option>
-                            <option value="standard-room3" data-price="120">Стандарт - Номер 3 ($120)</option>
-                        </optgroup>
-                        <optgroup label="Люкс">
-                            <option value="luxury-room1" data-price="200">Люкс - Номер 1 ($200)</option>
-                            <option value="luxury-room2" data-price="220">Люкс - Номер 2 ($220)</option>
-                            <option value="luxury-room3" data-price="250">Люкс - Номер 3 ($250)</option>
-                        </optgroup>
-                    </select>
-                </div>
-            </div>
-            
-            <!-- Форма выбора услуг -->
+</head>
 
-        </div>
-                    <div id="services" class="tab-pane">
-                <h2>Выбор услуг</h2>
-                <div class="form-group">
-                    <label>Выберите услуги:</label>
-                    <div>
-                        <label><input type="checkbox" name="services" value="wifi" data-price="10"> Wi-Fi</label><br>
-                        <label><input type="checkbox" name="services" value="breakfast" data-price="15"> Завтрак</label><br>
-                        <label><input type="checkbox" name="services" value="parking" data-price="20"> Парковка</label><br>
-                        <label><input type="checkbox" name="services" value="spa" data-price="30"> СПА</label><br>
-                        <label><input type="checkbox" name="services" value="gym" data-price="25"> Фитнес-зал</label><br>
-                        <label><input type="checkbox" name="services" value="room-service" data-price="20"> Обслуживание в номере</label><br>
+<body>
+    <div class="goga">
+        <div class="container ded ">
+            <h1 class="text-center">Бронирование номеров</h1>
+            
+            <div class="tab-content text-center">
+                <div id="rooms" class="tab-pane active">
+                    <h2>Выбор номера</h2>
+                    <div class="form-group">
+                        <label for="room-type">Тип номера:</label>
+                        <select id="room-type" class="form-control text-center" onchange="calculateTotalPrice()">
+                            <optgroup label="Эконом">
+                                <option value="economy-room1" data-price="50">Эконом - Номер 1 ($50)</option>
+                                <option value="economy-room2" data-price="60">Эконом - Номер 2 ($60)</option>
+                                <option value="economy-room3" data-price="70">Эконом - Номер 3 ($70)</option>
+                            </optgroup>
+                            <optgroup label="Стандарт">
+                                <option value="standard-room1" data-price="100">Стандарт - Номер 1 ($100)</option>
+                                <option value="standard-room2" data-price="110">Стандарт - Номер 2 ($110)</option>
+                                <option value="standard-room3" data-price="120">Стандарт - Номер 3 ($120)</option>
+                            </optgroup>
+                            <optgroup label="Люкс">
+                                <option value="luxury-room1" data-price="200">Люкс - Номер 1 ($200)</option>
+                                <option value="luxury-room2" data-price="220">Люкс - Номер 2 ($220)</option>
+                                <option value="luxury-room3" data-price="250">Люкс - Номер 3 ($250)</option>
+                            </optgroup>
+                        </select>
                     </div>
                 </div>
-            </div>
-        <div class="form-group mt-4">
-            <label for="check-in" class="form-label">Дата заезда</label>
-            <input type="date" class="form-control" id="check-in" required>
-        </div>
-        <div class="form-group">
-            <label for="check-out" class="form-label">Дата выезда</label>
-            <input type="date" class="form-control" id="check-out" required>
-        </div>
-        <div class="form-group">
-            <label for="guests" class="form-label">Количество гостей</label>
-            <input type="number" class="form-control" id="guests" required>
-        </div>
-
-        <div class="btn-group mt-4 col-md-12" style="padding: 1rem;">
-            <button type="button" class="btn btn-primary" onclick="submitBooking()" id="total-price">Забронировать</button>
-        </div>
-        
-        <div class="container">
-            <div id="booking-details"></div>
+                
+ 
+</div>
+<div id="services" class="tab-pane">
+    <h2>Выбор услуг</h2>
+    <div class="form-group">
+        <label>Выберите услуги:</label>
+        <div>
+            <label><input type="checkbox" name="services" value="wifi" data-price="10" onchange="calculateTotalPrice()"> Wi-Fi</label><br>
+            <label><input type="checkbox" name="services" value="breakfast" data-price="15" onchange="calculateTotalPrice()"> Завтрак</label><br>
+            <label><input type="checkbox" name="services" value="parking" data-price="20" onchange="calculateTotalPrice()"> Парковка</label><br>
+            <label><input type="checkbox" name="services" value="spa" data-price="30" onchange="calculateTotalPrice()"> СПА</label><br>
+            <label><input type="checkbox" name="services" value="gym" data-price="25" onchange="calculateTotalPrice()"> Фитнес-зал</label><br>
+            <label><input type="checkbox" name="services" value="room-service" data-price="20" onchange="calculateTotalPrice()"> Обслуживание в номере</label><br>
         </div>
     </div>
-</div>    
+</div>
+                
+                <div class="form-group mt-4">
+                    <label for="check-in" class="form-label">Дата заезда</label>
+                    <input type="date" class="form-control" id="check-in" onchange="calculateTotalPrice()" required>
+                </div>
+                <div class="form-group">
+                    <label for="check-out" class="form-label">Дата выезда</label>
+                    <input type="date" class="form-control" id="check-out" onchange="calculateTotalPrice()" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests" class="form-label">Количество гостей</label>
+                    <input type="number" class="form-control" id="guests" onchange="calculateTotalPrice()" required>
+                </div>
+    
+                <div class="btn-group mt-4 col-md-12" style="padding: 1rem;">
+                    <button type="button" class="btn btn-primary" onclick="submitBooking()" id="total-price">Забронировать</button>
+                </div>
+                
+                <div class="container">
+                    <div id="booking-details"></div>
+                </div>
+            </div>
+        </div>   
+    
     <script>
-        function calculateTotalPrice() {
-            const roomPrice = parseFloat(document.getElementById('room-type').selectedOptions[0].dataset.price);
-            const selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked'));
-            const servicesPrice = selectedServices.reduce((total, service) => total + parseFloat(service.dataset.price), 0);
-            const totalPrice = roomPrice + servicesPrice;
-            document.getElementById('total-price').textContent = `Забронировать. Цена: $${totalPrice}`;
-        }
-
+function calculateTotalPrice() {
+    const roomPrice = parseFloat(document.getElementById('room-type').selectedOptions[0].dataset.price);
+    
+    let servicesPrice = 0;
+    const selectedServices = document.querySelectorAll('input[name="services"]:checked');
+    selectedServices.forEach(service => {
+        servicesPrice += parseFloat(service.dataset.price);
+    });
+    
+    const checkInDate = new Date(document.getElementById('check-in').value);
+    const checkOutDate = new Date(document.getElementById('check-out').value);    
+    const stayDuration = Math.max(1, Math.round((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)));
+    
+    let guestsCount = +document.getElementById('guests').value || 1;
+    const extraGuests = Math.max(0, guestsCount - 4); 
+    const extraGuestsFee = extraGuests * 3;
+    
+    const totalPrice = stayDuration * (roomPrice + servicesPrice) + extraGuestsFee;
+    
+    document.getElementById('total-price').textContent = `Забронировать. Цена: $${totalPrice}`;
+}
+    
         function submitBooking() {
             const roomType = document.getElementById('room-type').value;
             const services = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(service => service.value);
             const checkInDate = document.getElementById('check-in').value;
             const checkOutDate = document.getElementById('check-out').value;
             const guestsCount = document.getElementById('guests').value;
-
-            // Redirect URL with parameters
+    
             const redirectUrl = `confirmation.html?checkIn=${checkInDate}&checkOut=${checkOutDate}&guests=${guestsCount}&room=${roomType}&services=${services}`;
             window.location.href = redirectUrl;
         }
-
+    
         document.getElementById('room-type').addEventListener('change', calculateTotalPrice);
         document.querySelectorAll('input[name="services"]').forEach(service => {
             service.addEventListener('change', calculateTotalPrice);
         });
-
-        calculateTotalPrice(); // Calculate total price on page load
-    </script>
-        <script>
+    
+        calculateTotalPrice(); 
             function submitBooking() {
                 const roomType = document.getElementById('room-type').value;
                 const services = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(service => service.value);
@@ -125,12 +137,12 @@ background: linear-gradient(133deg, rgba(177,145,69,0.8262954840139181) 4%, rgba
                 const checkOutDate = document.getElementById('check-out').value;
                 const guestsCount = document.getElementById('guests').value;
     
-                // Redirect URL with parameters
+
                 const redirectUrl = `confirmation.html?checkIn=${checkInDate}&checkOut=${checkOutDate}&guests=${guestsCount}&room=${roomType}&services=${services}`;
                 window.location.href = redirectUrl;
             }
     
-            // Get parameters from URL and display booking details
+
             const urlParams = new URLSearchParams(window.location.search);
             const checkInDateParam = urlParams.get('checkIn');
             const checkOutDateParam = urlParams.get('checkOut');
@@ -141,6 +153,7 @@ background: linear-gradient(133deg, rgba(177,145,69,0.8262954840139181) 4%, rgba
                 document.getElementById('check-out').value = checkOutDateParam;
                 document.getElementById('guests').value = guestsCountParam;
             }
+            
         </script>
 </body>
 </html>

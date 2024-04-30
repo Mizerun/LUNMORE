@@ -38,7 +38,7 @@
                 <a class="nav-link text-white" href="#contacts">Контакты</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#comment">Отзывы</a>
+                <a class="nav-link text-white" href="#commentaries">Отзывы</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="broni.html">Забронировать номер</a>
@@ -72,7 +72,7 @@
             <input type="number" class="form-control" id="guests" required>
         </div>
         <div class="btn-group">
-            <button type="submit" class="btn btn-primary" onclick="window.location.href='broni.html'">Забронировать</button>
+          <button type="button" class="btn btn-primary" onclick="submitForm()">Забронировать</button>
         </div>
     </div>
 </form>
@@ -471,7 +471,7 @@
         <div class="col-md-4 contact-info">Местоположение: Адрес отеля, Город, Страна</div>
       </div>
     </div></div>
-    <div class="container mt-5" id="comment">
+    <div class="container mt-5" id="commentaries">
       <div class="h3 text-center">Будем очень рады, если вы оставите комментария нашему отелю!</div>
       <div class="row">
 
@@ -518,15 +518,12 @@
       </div>
   </div>
     <script>
-          function submitForm() {
-        // Получить значения из заполненных полей формы
-        var checkInDate = document.getElementById('check-in').value;
-        var checkOutDate = document.getElementById('check-out').value;
-        var guestsCount = document.getElementById('guests').value;
-
-        // Перенаправление на другую страницу с передачей данных через URL-параметры
-        window.location.href = 'broni.html?checkIn=' + checkInDate + '&checkOut=' + checkOutDate + '&guests=' + guestsCount;
-    }
+        function submitForm() {
+            var checkInDate = document.getElementById('check-in').value;
+            var checkOutDate = document.getElementById('check-out').value;
+            var guestsCount = document.getElementById('guests').value;
+            window.location.href = 'broni.html?checkIn=' + checkInDate + '&checkOut=' + checkOutDate + '&guests=' + guestsCount;
+        }
         document.getElementById("commentForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
