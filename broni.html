@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бронирование номеров</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-<script src="./js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -20,77 +19,115 @@
                     <label for="room-type">Тип номера:</label>
                     <select id="room-type" class="form-control">
                         <optgroup label="Эконом">
-                            <option value="economy-room1">Эконом - Номер 1 ($50)</option>
-                            <option value="economy-room2">Эконом - Номер 2 ($60)</option>
-                            <option value="economy-room3">Эконом - Номер 3 ($70)</option>
+                            <option value="economy-room1" data-price="50">Эконом - Номер 1 ($50)</option>
+                            <option value="economy-room2" data-price="60">Эконом - Номер 2 ($60)</option>
+                            <option value="economy-room3" data-price="70">Эконом - Номер 3 ($70)</option>
                         </optgroup>
                         <optgroup label="Стандарт">
-                            <option value="standard-room1">Стандарт - Номер 1 ($100)</option>
-                            <option value="standard-room2">Стандарт - Номер 2 ($110)</option>
-                            <option value="standard-room3">Стандарт - Номер 3 ($120)</option>
+                            <option value="standard-room1" data-price="100">Стандарт - Номер 1 ($100)</option>
+                            <option value="standard-room2" data-price="110">Стандарт - Номер 2 ($110)</option>
+                            <option value="standard-room3" data-price="120">Стандарт - Номер 3 ($120)</option>
                         </optgroup>
                         <optgroup label="Люкс">
-                            <option value="luxury-room1">Люкс - Номер 1 ($200)</option>
-                            <option value="luxury-room2">Люкс - Номер 2 ($220)</option>
-                            <option value="luxury-room3">Люкс - Номер 3 ($250)</option>
+                            <option value="luxury-room1" data-price="200">Люкс - Номер 1 ($200)</option>
+                            <option value="luxury-room2" data-price="220">Люкс - Номер 2 ($220)</option>
+                            <option value="luxury-room3" data-price="250">Люкс - Номер 3 ($250)</option>
                         </optgroup>
                     </select>
                 </div>
             </div>
             
             <!-- Форма выбора услуг -->
-            <div id="services" class="tab-pane">
+
+        </div>
+                    <div id="services" class="tab-pane">
                 <h2>Выбор услуг</h2>
                 <div class="form-group">
                     <label>Выберите услуги:</label>
                     <div>
-                        <label><input type="checkbox" name="services" value="wifi"> Wi-Fi</label><br>
-                        <label><input type="checkbox" name="services" value="breakfast"> Завтрак</label><br>
-                        <label><input type="checkbox" name="services" value="parking"> Парковка</label><br>
-                        <label><input type="checkbox" name="services" value="spa"> СПА</label><br>
-                        <label><input type="checkbox" name="services" value="gym"> Фитнес-зал</label><br>
-                        <label><input type="checkbox" name="services" value="room-service"> Обслуживание в номере</label><br>
+                        <label><input type="checkbox" name="services" value="wifi" data-price="10"> Wi-Fi</label><br>
+                        <label><input type="checkbox" name="services" value="breakfast" data-price="15"> Завтрак</label><br>
+                        <label><input type="checkbox" name="services" value="parking" data-price="20"> Парковка</label><br>
+                        <label><input type="checkbox" name="services" value="spa" data-price="30"> СПА</label><br>
+                        <label><input type="checkbox" name="services" value="gym" data-price="25"> Фитнес-зал</label><br>
+                        <label><input type="checkbox" name="services" value="room-service" data-price="20"> Обслуживание в номере</label><br>
                     </div>
                 </div>
             </div>
+        <div class="form-group mt-4">
+            <label for="check-in" class="form-label">Дата заезда</label>
+            <input type="date" class="form-control" id="check-in" required>
         </div>
-            <!-- JavaScript -->
+        <div class="form-group">
+            <label for="check-out" class="form-label">Дата выезда</label>
+            <input type="date" class="form-control" id="check-out" required>
+        </div>
+        <div class="form-group">
+            <label for="guests" class="form-label">Количество гостей</label>
+            <input type="number" class="form-control" id="guests" required>
+        </div>
+
+        <div class="btn-group mt-4">
+            <button type="button" class="btn btn-primary" onclick="submitBooking()" id="total-price">Забронировать</button>
+        </div>
+        
+        <div class="container">
+            <div id="booking-details"></div>
+        </div>
+    </div>
+    
     <script>
+        function calculateTotalPrice() {
+            const roomPrice = parseFloat(document.getElementById('room-type').selectedOptions[0].dataset.price);
+            const selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked'));
+            const servicesPrice = selectedServices.reduce((total, service) => total + parseFloat(service.dataset.price), 0);
+            const totalPrice = roomPrice + servicesPrice;
+            document.getElementById('total-price').textContent = `Общая цена: $${totalPrice}`;
+        }
+
         function submitBooking() {
             const roomType = document.getElementById('room-type').value;
             const services = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(service => service.value);
+            const checkInDate = document.getElementById('check-in').value;
+            const checkOutDate = document.getElementById('check-out').value;
+            const guestsCount = document.getElementById('guests').value;
 
-            // Redirect URL
-            const redirectUrl = `broni.html?checkIn=2024-05-01&checkOut=2024-05-05&guests=2&room=${roomType}&services=${services}`;
+            // Redirect URL with parameters
+            const redirectUrl = `confirmation.html?checkIn=${checkInDate}&checkOut=${checkOutDate}&guests=${guestsCount}&room=${roomType}&services=${services}`;
             window.location.href = redirectUrl;
         }
+
+        document.getElementById('room-type').addEventListener('change', calculateTotalPrice);
+        document.querySelectorAll('input[name="services"]').forEach(service => {
+            service.addEventListener('change', calculateTotalPrice);
+        });
+
+        calculateTotalPrice(); // Calculate total price on page load
     </script>
-
-    <div class="container">
-        <div id="booking-details"></div>
-    </div>
-
-    <script>
-        // Get parameters from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const checkInDate = urlParams.get('checkIn');
-        const checkOutDate = urlParams.get('checkOut');
-        const guestsCount = urlParams.get('guests');
-
-        // Show booking details on the page
-        const bookingDetailsDiv = document.getElementById('booking-details');
-        const bookingDetailsHTML = `
-            <p><strong>Дата заезда:</strong> ${checkInDate}</p>
-            <p><strong>Дата выезда:</strong> ${checkOutDate}</p>
-            <p><strong>Количество гостей:</strong> ${guestsCount}</p>
-        `;
-        bookingDetailsDiv.innerHTML = bookingDetailsHTML;
-    </script>
-        <div class="btn-group">
-            <button type="submit" class="btn btn-primary" onclick="submitBooking()">Забронировать</button>
-        </div>
-    </div>
-
-
+        <script>
+            function submitBooking() {
+                const roomType = document.getElementById('room-type').value;
+                const services = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(service => service.value);
+                const checkInDate = document.getElementById('check-in').value;
+                const checkOutDate = document.getElementById('check-out').value;
+                const guestsCount = document.getElementById('guests').value;
+    
+                // Redirect URL with parameters
+                const redirectUrl = `confirmation.html?checkIn=${checkInDate}&checkOut=${checkOutDate}&guests=${guestsCount}&room=${roomType}&services=${services}`;
+                window.location.href = redirectUrl;
+            }
+    
+            // Get parameters from URL and display booking details
+            const urlParams = new URLSearchParams(window.location.search);
+            const checkInDateParam = urlParams.get('checkIn');
+            const checkOutDateParam = urlParams.get('checkOut');
+            const guestsCountParam = urlParams.get('guests');
+    
+            if (checkInDateParam && checkOutDateParam && guestsCountParam) {
+                document.getElementById('check-in').value = checkInDateParam;
+                document.getElementById('check-out').value = checkOutDateParam;
+                document.getElementById('guests').value = guestsCountParam;
+            }
+        </script>
 </body>
 </html>
