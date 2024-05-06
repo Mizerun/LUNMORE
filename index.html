@@ -91,17 +91,17 @@
           <img src="./img/logo.png" alt="Изображение 2" class="img-fluid" style="width: 30%;">
           <img src="./img/logo.png" alt="Изображение 3" class="img-fluid" style="width: 30%;">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
           <div class="custom-info">
-            <h3 class="info-title">Заголовок 1</h3>
+            <h3 class="info-title">30 ЛЕТ ПРИНИМАЕМ ГОСТЕЙ</h3>
             <p>С момента основания и по сей день мы предлагаем гостям обслуживание высочайшего класса, выгодно отличаясь соотношением цены и качества.</p>
           </div>
           <div class="custom-info">
-            <h3 class="info-title">Заголовок 2</h3>
+            <h3 class="info-title">27 КОМФОРТНЫХ КОМНАТ</h3>
             <p>У нас есть номера различных категорий, и каждый из них оснащен всеми удобствами, необходимыми для приятного пребывания.</p>
           </div>
           <div class="custom-info">
-            <h3 class="info-title">Заголовок 3</h3>
+            <h3 class="info-title">БОЛЕЕ 2000 ПОСТЕЛЕЙ В ГОД</h3>
             <p>С каждым годом количество наших гостей растет, к нам приезжают целыми семьями
               и обязательно возвращаются еще раз!</p>
           </div>
@@ -496,52 +496,50 @@
         <div class="col-md-4 contact-info">Местоположение: Адрес отеля, Город, Страна</div>
       </div>
     </div>
-    <div class="container mt-5" id="commentaries">
-      <div class="h3 text-center">Будем очень рады, если вы оставите комментария нашему отелю!</div>
-      <div class="row">
-
-        <div class="col-md-6 ">
-          <div class="comment-container" id="comments">
+<div class="container mt-5" id="commentaries">
+    <div class="h3 text-center">Будем очень рады, если вы оставите комментарий о нашем отеле!</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="comment-container" id="comments">
+              <div class="comment-box">
+                <strong>Администратор</strong> (admin@lunmorehotel.com): Добро пожаловать на сайт Hotel Lunmore! Будем рады видеть ваши комментарии.
+                <br>
+                <img src="./img/logo.png" alt="Admin avatar" class="preview-img">
+            </div>
             <div class="comment-box">
-              <strong>Администратор</strong> (admin@lunmorehotel.com): Добро пожаловать на сайт Hotel Lunmore! Будем рады видеть ваши комментарии.
-              <br>
-              <img src="./img/logo.png" alt="Admin avatar" class="preview-img">
-          </div>
-          <div class="comment-box">
-              <strong>Гость</strong> (guest123@example.com): Прекрасное место для отдыха и релаксации. Очень уютная атмосфера!
-              <br>
-              <img src="./img/logo.png" alt="Guest avatar" class="preview-img">
-          </div>
-          </div>
-      </div>
-
-          <div class="col-md-6">
-              <h4>Оставить комментарий</h4>
-              <form id="commentForm">
-                  <div class="mb-3">
-                      <label for="name" class="form-label">Имя</label>
-                      <input type="text" class="form-control" id="name" required>
-                  </div>
-                  <div class="mb-3">
-                      <label for="email" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="email" required>
-                  </div>
-                  <div class="mb-3">
-                      <label for="comment" class="form-label">Комментарий</label>
-                      <textarea class="form-control" id="comment" rows="3" required></textarea>
-                  </div>
-                  <div class="mb-3">
-                      <label for="photo" class="form-label">Загрузить фото</label>
-                      <input type="file" class="form-control" id="photo" accept="image/*" onchange="previewImage(event)">
-                      <img id="preview" class="preview-img" src="#" alt="Image preview" style="display: none;">
-                  </div>
-                  <div class="center-button">
-                      <button type="submit" class="btn btn-primary">Отправить комментарий</button>
-                  </div>
-              </form>
-          </div>
-      </div>
-  </div>
+                <strong>Гость</strong> (guest123@example.com): Прекрасное место для отдыха и релаксации. Очень уютная атмосфера!
+                <br>
+                <img src="./img/logo.png" alt="Guest avatar" class="preview-img">
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Оставить комментарий</h4>
+            <form id="commentForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Имя</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Комментарий</label>
+                    <textarea class="form-control" id="comment" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="photo" class="form-label">Загрузить фото</label>
+                    <input type="file" class="form-control" id="photo" accept="image/*" onchange="previewImage(event)">
+                    <img id="preview" class="preview-img" src="#" alt="Image preview" style="display: none;">
+                </div>
+                <div class="center-button">
+                    <button type="submit" class="btn btn-primary">Отправить комментарий</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
  
     <script>
         function submitForm() {
@@ -551,62 +549,62 @@
             window.location.href = 'broni.html?checkIn=' + checkInDate + '&checkOut=' + checkOutDate + '&guests=' + guestsCount;
         }
         document.getElementById("commentForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const commentText = document.getElementById("comment").value;
-    const photo = document.getElementById("preview").src;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const commentText = document.getElementById("comment").value;
+        const photo = document.getElementById("preview").src;
 
-    const newComment = `
-    <div class="comment-box"> 
-        <strong>${name}</strong> (${email}): ${commentText}
-        <br>
-        <img src="${photo}" alt="Uploaded photo" class="preview-img">
-    </div>`;
+        const newComment = `
+        <div class="comment-box">
+            <strong>${name}</strong> (${email}): ${commentText}
+            <br>
+            <img src="${photo}" alt="Uploaded photo" class="preview-img">
+        </div>`;
 
-    const commentsContainer = document.getElementById("comments");
-    commentsContainer.insertAdjacentHTML("beforeend", newComment);
+        const commentsContainer = document.getElementById("comments");
+        commentsContainer.insertAdjacentHTML("beforeend", newComment);
+        
+        // Clear form fields
+        document.getElementById("commentForm").reset();
+        document.getElementById("preview").style.display = "none";
 
-    // Clear form fields
-    document.getElementById("commentForm").reset();
-    document.getElementById("preview").style.display = "none";
+        // Save comment to localStorage
+        const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
+        existingComments.push(newComment);
+        localStorage.setItem("comments", JSON.stringify(existingComments));
 
-    // Save comment to localStorage
-    const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
-    existingComments.push(newComment);
-    localStorage.setItem("comments", JSON.stringify(existingComments));
-
-    // load and display all comments
-    commentsContainer.innerHTML = "";
-    existingComments.forEach(comment => {
-        commentsContainer.insertAdjacentHTML("beforeend", comment);
+        // Load and display all comments
+        commentsContainer.innerHTML = "";
+        existingComments.forEach(comment => {
+            commentsContainer.insertAdjacentHTML("beforeend", comment);
+        });
     });
-});
 
-window.addEventListener("DOMContentLoaded", function() {
-    const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
-    const commentsContainer = document.getElementById("comments");
+    window.addEventListener("DOMContentLoaded", function() {
+        const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
+        const commentsContainer = document.getElementById("comments");
 
-    existingComments.forEach(comment => {
-        commentsContainer.insertAdjacentHTML("beforeend", comment);
+        existingComments.forEach(comment => {
+            commentsContainer.insertAdjacentHTML("beforeend", comment);
+        });
     });
-});
 
-function previewImage(event) {
-    const preview = document.getElementById("preview");
-    const file = event.target.files[0];
-    const reader = new FileReader();
+    function previewImage(event) {
+        const preview = document.getElementById("preview");
+        const file = event.target.files[0];
+        const reader = new FileReader();
 
-    reader.onload = function() {
-        preview.src = reader.result;
-        preview.style.display = "block";
-    };
+        reader.onload = function() {
+            preview.src = reader.result;
+            preview.style.display = "block";
+        };
 
-    if (file) {
-        reader.readAsDataURL(file);
+        if (file) {
+            reader.readAsDataURL(file);
+        }
     }
-}
     </script>
 </body>
 </html>
