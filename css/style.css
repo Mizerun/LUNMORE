@@ -1,5 +1,5 @@
 :root{--index:calc(1vw + 1vh);--transition:transform .75s cubic-bezier(.075, .5, 0, 1)}
-body{z-index:999;background-color:rgb(207, 148, 121);color: rgb(68, 68, 68);}
+body{z-index:999;background-color:rgb(220 173 125);color: rgb(68, 68, 68);}
 .layers{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;position:relative}
 .layer{height:100%;width:100%;position:absolute;background-size:cover;background-position:center;will-change:transform;z-index:2;transition:var(--transition)}
 .layers__base{transform:translate3d(0,calc(var(--scrollTop)/ 1.6),0);z-index:0}
