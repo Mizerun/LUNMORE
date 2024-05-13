@@ -141,14 +141,14 @@
                   <div class="modal-dialog" role="document">
                       <div class="modal-content">
                           <div class="modal-header">
-                              <h5 class="modal-title" id="wifiModalLabel">Wi-Fi Service Information</h5>
+                              <h5 class="modal-title text-center" id="wifiModalLabel">Информация об услуге Wi-Fi</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                               </button>
                           </div>
                           <div class="modal-body">
-                              <img src="wifi_image.jpg" class="img-fluid" alt="Wi-Fi Service">
-                              <p>Бесплатный доступ к Wi-Fi для всех гостей.</p>
+                              <img src="./img/wifi.png" class="img-fluid" alt="Wi-Fi Service">
+                              <p class="text-center">Вы можете совершенно бесплатно пользоваться скоростным интернетом во всем отеле!</p>
                           </div>
                       </div>
                   </div>
@@ -156,30 +156,123 @@
             </div>
             <div class="service-item color">
               <h3 class="cart-title ">Завтрак</h3>
-              <p class="cart-description">Бесплатный доступ к Wi-Fi для всех гостей.</p>
-              <img src="./img/break.png" alt="Wi-Fi Icon" class="logoysl">
+              <p class="cart-description">Вкуснейший завтрак, обед и ужин.</p>
+              <img src="./img/break.png" alt="break Icon" class="logoysl">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#breakModal">Подробнее</button>
+              <div class="modal fade" id="breakModal" tabindex="-1" role="dialog" aria-labelledby="breakModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="breakModalLabel">Информация о завтраках</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="./img/break.png" class="img-fluid" alt="break Service">
+                            <p class="text-center">Вы можете преобрести услугу "Шведский стол" при заселении. Начало - 6:00. Конец - 11:00</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
           </div>
           <div class="service-item color">
-            <h3 class="cart-title ">Ужин в номер</h3>
-            <p class="cart-description">Бесплатный доступ к Wi-Fi для всех гостей.</p>
-            <img src="./img/yzhin.png" alt="Wi-Fi Icon" class="logoysl">
+            <h3 class="cart-title ">Услуга room-сервис</h3>
+            <p class="cart-description">Возможность заказать еду в номер</p>
+            <img src="./img/yzhin.png" alt="yzh Icon" class="logoysl">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yzhModal">Подробнее</button>
+              <div class="modal fade" id="yzhModal" tabindex="-1" role="dialog" aria-labelledby="yzhModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="yzhModalLabel">Информация о завтраках</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="./img/yzhin.png" class="img-fluid" alt="yzh Service">
+                            <p class="text-center">Для вас предоставлена возможность заказать еду в номер в любое время суток!</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
         </div>
             </div>
             <div class="col-md-6">
               <div class="service-item color">
                 <h3 class="cart-title ">СПА</h3>
                 <p class="cart-description">Бесплатный доступ к Wi-Fi для всех гостей.</p>
-                <img src="./img/spa.png" alt="Wi-Fi Icon" class="logoysl">
+                <img src="./img/spa.png" alt="spa Icon" class="logoysl">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#spaModal">Подробнее</button>
+              <div class="modal fade" id="spaModal" tabindex="-1" role="dialog" aria-labelledby="spaModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="spaModalLabel">Информация о СПА</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="./img/spa.png" class="img-fluid" alt="spa Service">
+                            <p class="text-center">СПА и Услуги Красоты
+                              Предлагаемый СПА-центр отеля - идеальное место для релаксации и восстановления сил. Наши профессиональные терапевты и косметологи готовы предложить вам широкий спектр услуг,
+                               включая: <br>
+                              
+                              Массажи: Расслабьтесь под руками опытных массажистов, наслаждаясь классическими, аюрведическими или другими видами массажа. <br>
+                              Уход за кожей: Насладитесь уходовыми процедурами для лица и тела, помогающими вашей коже оставаться здоровой и сияющей. <br>
+                              Сауна и Гидромассаж: Ощутите благотворное воздействие сауны или гидромассажной ванны после дня наполненного приключениями. <br>
+                              Ароматерапия и Релаксация: Погрузитесь в мир ароматов и звуков, позволяя вашему организму расслабиться и восстановиться. <br>
+                              Посещение СПА-центра отеля - прекрасный способ подарить себе заслуженное внимание и заботу, идеальное дополнение к вашему отдыху.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
             </div>
             <div class="service-item color">
               <h3 class="cart-title ">Фитнес-зал</h3>
               <p class="cart-description">Бесплатный доступ к Wi-Fi для всех гостей.</p>
               <img src="./img/fitnes.png" alt="Wi-Fi Icon" class="logoysl">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#breakModal">Подробнее</button>
+              <div class="modal fade" id="breakModal" tabindex="-1" role="dialog" aria-labelledby="breakModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="breakModalLabel">Информация о завтраках</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="./img/break.png" class="img-fluid" alt="break Service">
+                            <p class="text-center">Вы можете преобрести услугу "Шведский стол" при заселении. Начало - 6:00. Конец - 11:00</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
           </div>
           <div class="service-item color">
             <h3 class="cart-title ">Ежедневная уборка</h3>
             <p class="cart-description">Бесплатный доступ к Wi-Fi для всех гостей.</p>
             <img src="./img/yborka.png" alt="Wi-Fi Icon" class="logoysl">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#breakModal">Подробнее</button>
+              <div class="modal fade" id="breakModal" tabindex="-1" role="dialog" aria-labelledby="breakModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="breakModalLabel">Информация о завтраках</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="./img/break.png" class="img-fluid" alt="break Service">
+                            <p class="text-center">Вы можете преобрести услугу "Шведский стол" при заселении. Начало - 6:00. Конец - 11:00</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
         </div>
             </div>
           </div>
@@ -187,17 +280,44 @@
       </div>
     </div><br>
     <img src="./img/grisha.png" alt="" class="lalala">
-    <div class="border5">
-    <div class="container gf" id="contacts">
-      <h3 class="text-white">Контакты</h3>
-      <div class="row text-white">
-        <div class="col-md-4 contact-info">Телефон: +7 (XXX) XXX-XX-XX</div>
-        <div class="col-md-4 contact-info">Почта: example@example.com</div>
-        <div class="col-md-4 contact-info">Местоположение: Адрес отеля, Город, Страна</div>
+    <div class="border10">
+      <div id="carouselExample" class="carousel slide" data-ride="carousel" style="padding: 5%;">
+        <div class="carousel-inner" style="width: 80%; left: 10%;">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-6" style="border: 1px solid white;">
+                <h2>Лобби-бар</h2>
+                <p>Здесь вы можете отдохнуть после дня, насладиться напитками и закусками в уютной обстановке.</p>
+              </div>
+              <div class="col-md-6"style="border: 1px solid white;">
+                <img src="./img/bar.jpg" class="d-block w-100" alt="Лобби-бар">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6"style="border: 1px solid white;">
+                <h2>Ресторан</h2>
+                <p>Наш ресторан предлагает богатое меню изысканных блюд для завтрака, обеда и ужина.</p>
+              </div>
+              <div class="col-md-6"style="border: 1px solid white;">
+                <img src="./img/rest.png" class="d-block w-100" alt="Ресторан">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev" style="top: 50%; transform: translateY(-50%); font-size: 20px;">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next" style="top: 50%; transform: translateY(-50%); font-size: 20px;">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
       </div>
-    </div></div>
+  </div>
     <img src="./img/grisha.png" alt="" class="lalala1">
-
+<br>
       <div class="w-100 " id="numbers">
         <h3 class="text-center">Номера</h3>
         <div class="wrapper-nav">
@@ -432,6 +552,42 @@
 <img src="./img/grisha.png" alt="" class="lalala2">
 <div class="border6"></div>
     <script>
+    let currentIndex = 0;
+    const images = ['./img/rest.png', './img/bar.jpg'];
+    const texts = [
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, fugiat?',
+        'Some other information goes here.'
+    ];
+
+    const infoText = document.getElementById('infoText');
+    const imageColumn = document.getElementById('imageColumn');
+    
+    function showNext() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateContent();
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateContent();
+    }
+
+    function updateContent() {
+        infoText.innerText = texts[currentIndex];
+        
+        // Remove previous image
+        while (imageColumn.firstChild) {
+            imageColumn.removeChild(imageColumn.firstChild);
+        }
+
+        // Create new image element
+        const newImage = document.createElement('img');
+        newImage.src = images[currentIndex];
+        newImage.alt = 'Image ' + (currentIndex + 1);
+
+        // Append the new image
+        imageColumn.appendChild(newImage);
+    }
         function submitForm() {
             var checkInDate = document.getElementById('check-in').value;
             var checkOutDate = document.getElementById('check-out').value;
