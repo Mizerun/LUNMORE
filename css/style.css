@@ -72,6 +72,8 @@ body{z-index:999;background-color:rgb(220 173 125);color: rgb(68, 68, 68);}
 @media (max-width: 768px) {
   body {
       width: 100%; /* Ширина body будет равна ширине экрана */
+      max-width: 100%; /* Устанавливаем максимальную ширину body на 100% */
       overflow-x: hidden; /* Скрыть горизонтальную прокрутку, если она не нужна */
+      position: relative; /* Установим позиционирование элемента */
   }
 }
