@@ -1,53 +1,299 @@
-:root{--index:calc(1vw + 1vh);--transition:transform .75s cubic-bezier(.075, .5, 0, 1)}
-body{z-index:999;background-color:rgb(220 173 125);color: rgb(68, 68, 68);}
-.layers{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;position:relative}
-.layer{height:100%;width:100%;position:absolute;background-size:cover;background-position:center;will-change:transform;z-index:2;transition:var(--transition)}
-.layers__base{transform:translate3d(0,calc(var(--scrollTop)/ 1.6),0);z-index:0}
-.layers__middle{transform:translate3d(0,calc(var(--scrollTop)/ 2.5),0)}
-.layers__front{transform:translate3d(0,calc(var(--scrollTop)/ 5.7),0)}
-.layer__header{z-index:1;transform:translate3d(0,calc(var(--scrollTop)/ 2),0);transition:var(--transition);will-change:transform;text-transform:uppercase;font-weight:900;color:var(--text);text-shadow:0 0 15px #9d822b}
-.main-header{position:relative;}
-.main-header::after{content:'';position:absolute;z-index:100;width:100%;height:calc(var(--index) * 2);background-image:url(../img/grisha.png);background-size:cover;background-repeat:no-repeat;background-position:center;bottom:calc(var(--index) * -1)}
-.layers__title{font-size:calc(var(--index) * 2.65);letter-spacing:calc(var(--index)/ 2.25)}
-.content{will-change:transform}
-.copy{position:absolute;bottom:calc(var(--index) * 2.5);opacity:.45;font-size:calc(var(--index) * .75);letter-spacing:calc(var(--index)/ 37.5)}
-.mynav{z-index:999;position:absolute;width:100%;color:#ca7a2f}
-.custom-container{display:flex;flex-wrap:wrap;justify-content:space-between;padding:0 20px}
-.form-group{flex:0 0 calc(33.33% - 10px);margin-bottom:10px}
-@media (max-width:768px){.form-group{flex:0 0 100%;margin-right:0}}
-.btn-group{flex:0 0 100%}.btn-group button{width:100%}
-.comment-box{margin-top:20px;padding:10px;border:1px solid #ccc;border-radius:5px}
-.preview-img{max-width:100%;margin-top:10px}
-.comment-box{margin-top:20px;padding:10px;border:1px solid #ccc;border-radius:5px}
-.preview-img{max-width:100%;margin-top:10px}
-.center-button{display:flex;justify-content:center}
-.comment-container{margin-top:20px;padding:10px;border:1px solid #ccc;border-radius:5px;max-height:300px;overflow:auto}
-.comment{margin-bottom:10px;padding:10px;border:1px solid #e9ecef;border-radius:5px;background-color:#f8f9fa}
-.gg{margin-top: 2.5rem; background-color: rgb(121, 68, 26);}
-.hotel-info {margin-bottom: 20px;}
-.custom-info {margin-bottom: 20px;}
-.service-item {border: 1px solid #ccc;padding: 10px;margin-bottom: 10px;}
-.fg{margin-top: 3%;}
-.gf{z-index:104;position:relative; color:#000000;}
-.cart {background-color: #f8f9fa;border: 1px solid #ced4da;border-radius: 8px;padding: 10px;margin: 10px;display: flex;flex-direction: column;justify-content: space-between;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
-.cart-title {font-size: 18px;font-weight: bold;margin-bottom: 10px;}
-.cart-description {font-size: 14px;line-height: 1.5;}
-@media (max-width: 768px) {.cart {width: 80%;height: auto;}}
-.logoysl{width: 18%; border-radius: 50%;}
-.btn-primary1 {--bs-btn-bg: #0d6efd05;--bs-btn-border-color: #ffd4bd; --bs-btn-hover-bg: #ff914982;--bs-btn-hover-border-color: #93590885}
-.border4{border: 1px solid rgb(220 173 125); padding: 1%;}
-.color{background-color: aliceblue;}
-.lalala{width: 100%;position: absolute; margin-top: -2%;}
-.lalala1{width: 100%;position: absolute; margin-top: -2%;}
-.border5{border: 1px solid #482505;padding: 2%;background-color: #482505;}
-.lalala2{width: 100%;position: absolute; margin-top: -2%;}
-.border6{border: 1px solid rgb(220 173 125)}
-.border7{border: 1px solid rgb(189, 189, 189);}
-.border10{border: 1px solid #482505;background-color: #482505;}
-.bo11{border: 1px solid white;}
-.bo12{border: 1px solid white;}
-.mynav1{z-index:999;width:100%;color:#ca7a2f}
-.lalala22{width: 100%;position: absolute; margin-top: -1%;}
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+    --text: #000000;
+}
+
+body {
+    z-index: 999;
+    background-color: rgb(220, 173, 125);
+    color: var(--text);
+}
+
+.layers {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.layers__base {
+    transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+    z-index: 0;
+}
+
+.layers__middle {
+    transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.layers__front {
+    transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+
+.layer__header {
+    z-index: 1;
+    transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+    transition: var(--transition);
+    will-change: transform;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--text);
+    text-shadow: 0 0 15px #9d822b;
+}
+
+.main-header {
+    position: relative;
+}
+
+.main-header::after {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: calc(var(--index) * 2);
+    background-image: url(../img/grisha.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: calc(var(--index) * -1);
+}
+
+.layers__title {
+    font-size: calc(var(--index) * 2.65);
+    letter-spacing: calc(var(--index) / 2.25);
+}
+
+.content {
+    will-change: transform;
+}
+
+.copy {
+    position: absolute;
+    bottom: calc(var(--index) * 2.5);
+    opacity: 0.45;
+    font-size: calc(var(--index) * 0.75);
+    letter-spacing: calc(var(--index) / 37.5);
+}
+
+.mynav {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    color: #ca7a2f;
+}
+
+.custom-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.form-group {
+    flex: 0 0 calc(33.33% - 10px);
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+}
+
+.btn-group {
+    flex: 0 0 100%;
+}
+
+.btn-group button {
+    width: 100%;
+}
+
+.comment-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.preview-img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+}
+
+.comment-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.gg {
+    margin-top: 2.5rem;
+    background-color: rgb(121, 68, 26);
+}
+
+.hotel-info {
+    margin-bottom: 20px;
+}
+
+.custom-info {
+    margin-bottom: 20px;
+}
+
+.service-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.fg {
+    margin-top: 3%;
+}
+
+.gf {
+    z-index: 104;
+    position: relative;
+    color: #000000;
+}
+
+.cart {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cart-description {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .cart {
+        width: 80%;
+        height: auto;
+    }
+}
+
+.logoysl {
+    width: 18%;
+    border-radius: 50%;
+}
+
+.btn-primary1 {
+    --bs-btn-bg: #0d6efd05;
+    --bs-btn-border-color: #ffd4bd;
+    --bs-btn-hover-bg: #ff914982;
+    --bs-btn-hover-border-color: #93590885;
+}
+
+.border4 {
+    border: 1px solid rgb(220, 173, 125);
+    padding: 1%;
+}
+
+.color {
+    background-color: aliceblue;
+}
+
+.lalala {
+    width: 100%;
+    position: absolute;
+    margin-top: -2%;
+}
+
+.lalala1 {
+    width: 100%;
+    position: absolute;
+    margin-top: -2%;
+}
+
+.border5 {
+    border: 1px solid #482505;
+    padding: 2%;
+    background-color: #482505;
+}
+
+.lalala2 {
+    width: 100%;
+    position: absolute;
+    margin-top: -2%;
+}
+
+.border6 {
+    border: 1px solid rgb(220, 173, 125);
+}
+
+.border7 {
+    border: 1px solid rgb(189, 189, 189);
+}
+
+.border10 {
+    border: 1px solid #482505;
+    background-color: #482505;
+}
+
+.bo11 {
+    border: 1px solid white;
+}
+
+.bo12 {
+    border: 1px solid white;
+}
+
+.mynav1 {
+    z-index: 999;
+    width: 100%;
+    color: #ca7a2f;
+}
+
+.lalala22 {
+    width: 100%;
+    position: absolute;
+    margin-top: -1%;
+}
+
 .loading-overlay {
     display: none;
     position: fixed;
@@ -61,19 +307,21 @@ body{z-index:999;background-color:rgb(220 173 125);color: rgb(68, 68, 68);}
     text-align: center;
     padding-top: 45vh;
     z-index: 9999;
-  }
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .text-container {
-        width: 100%; /* Задайте желаемую ширину дива */
-        height: 200px; /* Задайте желаемую высоту дива */
-        overflow: scroll; /* Добавьте прокрутку, если текст не помещается */
+        width: 100%;
+        height: 200px;
+        overflow: scroll;
     }
 }
+
 @media (max-width: 768px) {
-  body {
-      width: 100%; /* Ширина body будет равна ширине экрана */
-      max-width: 100%; /* Устанавливаем максимальную ширину body на 100% */
-      overflow-x: hidden; /* Скрыть горизонтальную прокрутку, если она не нужна */
-      position: relative; /* Установим позиционирование элемента */
-  }
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        position: relative;
+    }
 }
