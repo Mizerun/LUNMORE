@@ -62,7 +62,7 @@ body{z-index:999;background-color:rgb(220 173 125);color: rgb(68, 68, 68);}
     padding-top: 45vh;
     z-index: 9999;
   }
-  @media (max-width: 7001px) {
+  @media (max-width: 768px) {
     .text-container {
         width: 100%; /* Задайте желаемую ширину дива */
         height: 200px; /* Задайте желаемую высоту дива */
