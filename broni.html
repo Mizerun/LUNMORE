@@ -5,18 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бронирование номеров</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<script src="./js/bootstrap.min.js"></script>
     <style>
            body {background-image: url('./img/haha.png');background-size: cover;background-attachment: fixed;color: rgb(0, 0, 0);text-shadow: 1px 1px 1px #afafaf;}
         .container{background: rgb(177,145,69);background: linear-gradient(133deg, rgba(177,145,69,0.8262954840139181) 4%, rgba(209,142,98,0.7590685932576156) 45%, rgba(216,192,170,0.7450629910167192) 98%);}
 </style>
 </head>
 <body>
-    <div class="goga">
-        <div class="container ded ">
-            <button id="goBackButton" class="btn btn-primary btn-primary1" style="margin-top: 1%;">вернуться на главную</button>
-            <h1 class="text-center">Бронирование номеров</h1>
+    <div class="mynav1">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">
+                <img src="./img/logo.png" alt="" width="70" height="70" style="border-radius: 100px; border: 3px solid rgba(68, 43, 20, 0.308);">
+              </a> 
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="#bron">О Нас</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html#yslygi">Услуги</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html#numbers">Номера</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html#contacts">Контакты</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html#commentaries">Отзывы</a>
+                  </li>
+                </ul>
+    
+              </div>
+            </div>
+          </nav></div>
+        <div class="container">
+            <button id="goBackButton" class="btn btn-primary btn-danger" style="margin-top: 1%;" onclick="redirectToMainPage()">вернуться на главную</button>
+            <h1 class="text-center text-dark">Бронирование номеров</h1>
             
             <div class="tab-content text-center">
                 <div id="rooms" class="tab-pane active">
@@ -48,11 +83,6 @@
     <div class="form-group">
         <label>Выберите услуги:</label>
         <div class="container">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="services" id="wifi" value="wifi" data-price="10" onchange="calculateTotalPrice()">
-                <label class="form-check-label" for="wifi">Wi-Fi</label>
-            </div>
-            
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="services" id="breakfast" value="breakfast" data-price="15" onchange="calculateTotalPrice()">
                 <label class="form-check-label" for="breakfast">Завтрак</label>
@@ -89,16 +119,33 @@
                 </div>
     
                 <div class="btn-group mt-4 col-md-12" style="padding: 1rem;">
-                    <button type="button" class="btn btn-primary" onclick="submitBooking()" id="total-price">Забронировать</button>
+                    <button type="button" class="btn btn-outline-dark" onclick="submitBookingAndShowLoadingScreen()" id="booking-submit-button">Забронировать</button>
+                    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+                        <div class="spinner-border text-light" role="status"></div>
+                        <div>Пожалуйста, подождите...</div>
+                    </div>
                 </div>
                 
-                <div class="container">
-                    <div id="booking-details"></div>
-                </div>
+                
             </div>
-        </div>   
-    
+
     <script>
+        function redirectToMainPage() {
+    window.location.href = "index.html";
+}
+        function submitBookingAndShowLoadingScreen() {
+    submitBooking();
+    showLoadingScreen(3000); // Укажите необходимое время загрузки здесь
+}
+
+function showLoadingScreen(loadingTime) {
+    document.getElementById('loading-overlay').style.display = 'block';
+
+    setTimeout(function() {
+        document.getElementById('loading-overlay').style.display = 'none';
+        window.location.href = 'thankyou.html';
+    }, loadingTime);
+}
 function calculateTotalPrice() {
     const roomPrice = parseFloat(document.getElementById('room-type').selectedOptions[0].dataset.price);
     
@@ -136,7 +183,7 @@ function calculateTotalPrice() {
             const checkOutDate = document.getElementById('check-out').value;
             const guestsCount = document.getElementById('guests').value;
     
-            const redirectUrl = `confirmation.html?checkIn=${checkInDate}&checkOut=${checkOutDate}&guests=${guestsCount}&room=${roomType}&services=${services}`;
+            const redirectUrl = `thankyou.html?checkIn=${checkInDate}&checkOut=${checkOutDate}&guests=${guestsCount}&room=${roomType}&services=${services}`;
             window.location.href = redirectUrl;
         }
     
@@ -154,7 +201,7 @@ function calculateTotalPrice() {
                 const guestsCount = document.getElementById('guests').value;
     
 
-                const redirectUrl = `confirmation.html?checkIn=${checkInDate}&checkOut=${checkOutDate}&guests=${guestsCount}&room=${roomType}&services=${services}`;
+                const redirectUrl = `thankyou.html?checkIn=${checkInDate}&checkOut=${checkOutDate}&guests=${guestsCount}&room=${roomType}&services=${services}`;
                 window.location.href = redirectUrl;
             }
     
