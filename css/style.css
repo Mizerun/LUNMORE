@@ -1,13 +1,15 @@
 :root {
     --index: calc(1vw + 1vh);
-    --transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
-    --text: #000000;
+    --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
 }
 
 body {
     z-index: 999;
     background-color: rgb(220, 173, 125);
-    color: var(--text);
+    color: rgb(68, 68, 68);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .layers {
@@ -84,8 +86,8 @@ body {
 .copy {
     position: absolute;
     bottom: calc(var(--index) * 2.5);
-    opacity: 0.45;
-    font-size: calc(var(--index) * 0.75);
+    opacity: .45;
+    font-size: calc(var(--index) * .75);
     letter-spacing: calc(var(--index) / 37.5);
 }
 
@@ -162,10 +164,7 @@ body {
     background-color: rgb(121, 68, 26);
 }
 
-.hotel-info {
-    margin-bottom: 20px;
-}
-
+.hotel-info,
 .custom-info {
     margin-bottom: 20px;
 }
@@ -237,13 +236,10 @@ body {
     background-color: aliceblue;
 }
 
-.lalala {
-    width: 100%;
-    position: absolute;
-    margin-top: -2%;
-}
-
-.lalala1 {
+.lalala,
+.lalala1,
+.lalala2,
+.lalala22 {
     width: 100%;
     position: absolute;
     margin-top: -2%;
@@ -253,12 +249,6 @@ body {
     border: 1px solid #482505;
     padding: 2%;
     background-color: #482505;
-}
-
-.lalala2 {
-    width: 100%;
-    position: absolute;
-    margin-top: -2%;
 }
 
 .border6 {
@@ -274,10 +264,7 @@ body {
     background-color: #482505;
 }
 
-.bo11 {
-    border: 1px solid white;
-}
-
+.bo11,
 .bo12 {
     border: 1px solid white;
 }
@@ -286,12 +273,6 @@ body {
     z-index: 999;
     width: 100%;
     color: #ca7a2f;
-}
-
-.lalala22 {
-    width: 100%;
-    position: absolute;
-    margin-top: -1%;
 }
 
 .loading-overlay {
