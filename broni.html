@@ -13,8 +13,14 @@
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <script src="./js/bootstrap.min.js"></script>
     <style>
-           body {background-image: url('./img/haha.png');background-size: cover;background-attachment: fixed;color: rgb(0, 0, 0);text-shadow: 1px 1px 1px #afafaf;}
-        .container{background: rgb(177,145,69);background: linear-gradient(133deg, rgba(177,145,69,0.8262954840139181) 4%, rgba(209,142,98,0.7590685932576156) 45%, rgba(216,192,170,0.7450629910167192) 98%);}
+           body {
+
+            background: linear-gradient(133deg, rgba(177, 145, 69, 0.8262954840139181) 4%, rgba(209, 142, 98, 0.7590685932576156) 45%, rgba(216, 192, 170, 0.7450629910167192) 98%), url('./img/haha.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 1px #afafaf;
+    background-position: center;}
 </style>
 </head>
 <body>
@@ -118,8 +124,8 @@
                     <input type="number" class="form-control" id="guests" onchange="calculateTotalPrice()" required>
                 </div>
     
-                <div class="btn-group mt-4 col-md-12" style="padding: 1rem;">
-                    <button type="button" class="btn btn-outline-dark" onclick="submitBookingAndShowLoadingScreen()" id="booking-submit-button">Забронировать</button>
+                <div class="btn-group mt-4 col-12" style="padding: 1rem; ">
+                    <button type="button" class="btn btn-outline-dark" style="border-radius: 6px;" onclick="submitBookingAndShowLoadingScreen()" id="booking-submit-button">Забронировать</button>
                     <div class="loading-overlay" id="loading-overlay" style="display: none;">
                         <div class="spinner-border text-light" role="status"></div>
                         <div>Пожалуйста, подождите...</div>
