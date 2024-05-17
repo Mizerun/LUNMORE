@@ -69,3 +69,9 @@ body{z-index:999;background-color:rgb(220 173 125);color: rgb(68, 68, 68);}
         overflow: scroll; /* Добавьте прокрутку, если текст не помещается */
     }
 }
+@media (max-width: 768px) {
+  body {
+      width: 100%; /* Ширина body будет равна ширине экрана */
+      overflow-x: hidden; /* Скрыть горизонтальную прокрутку, если она не нужна */
+  }
+}
