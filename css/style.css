@@ -346,3 +346,5 @@ body {
   width: 15.5rem;
   height: 3.5rem;
 }
+.modal-dialog1{max-width:var(--bs-modal-width);margin-right:auto;margin-left:auto;--bs-modal-width:500px;}
+.d-block{height: 10rem;}
