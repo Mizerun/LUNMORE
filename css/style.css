@@ -238,13 +238,16 @@ body {
 
 .lalala,
 .lalala1,
-.lalala2,
-.lalala22 {
+.lalala2{
     width: 100%;
     position: absolute;
     margin-top: -2%;
 }
-
+.lalala22 {
+  width: 100%;
+  position: absolute;
+  margin-top: 1%;
+}
 .border5 {
     border: 1px solid #482505;
     padding: 2%;
@@ -304,6 +307,13 @@ body {
       max-width: 100%; /* Устанавливаем максимальную ширину body на 100% */
       overflow-x: hidden; /* Скрыть горизонтальную прокрутку, если она не нужна */
       position: relative; /* Установим позиционирование элемента */
+  }
+}
+@media (max-width: 768px) {
+  .text-container {
+      width: 80%; /* Задайте желаемую ширину дива */
+      height: 200px; /* Задайте желаемую высоту дива */
+      overflow: scroll; /* Добавьте прокрутку, если текст не помещается */
   }
 }
 .service-card {

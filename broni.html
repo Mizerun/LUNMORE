@@ -123,9 +123,21 @@
                     <label for="guests" class="form-label">Количество гостей</label>
                     <input type="number" class="form-control" id="guests" onchange="calculateTotalPrice()" required>
                 </div>
+                <div class="form-group mt-4">
+                    <label for="full-name" class="form-label">ФИО</label>
+                    <input type="text" class="form-control" id="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Эл. почта:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Номер телефона:</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
     
                 <div class="btn-group mt-4 col-12" style="padding: 1rem; ">
-                    <button type="button" class="btn btn-outline-dark" style="border-radius: 6px;" onclick="submitBookingAndShowLoadingScreen()" id="booking-submit-button">Забронировать</button>
+                    <button type="button" class="btn btn-outline-dark" style="border-radius: 6px;" onclick="submitBookingAndShowLoadingScreen()" id="booking-submit-button"><span id="total-price"></span></button>
                     <div class="loading-overlay" id="loading-overlay" style="display: none;">
                         <div class="spinner-border text-light" role="status"></div>
                         <div>Пожалуйста, подождите...</div>
@@ -133,12 +145,6 @@
                 </div>
                 
                 
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-md-6 col-sm-4 col-12">Большой экран</div>
-                    <div class="col-lg-4 col-md-6 col-sm-8 col-12">Меньший экран</div>
-                </div>
             </div>
     <script>
         function redirectToMainPage() {
