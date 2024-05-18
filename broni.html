@@ -50,15 +50,16 @@
                   <li class="nav-item">
                     <a class="nav-link text-white" href="index.html#commentaries">Отзывы</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html">Вернуться на главную</a>
+                  </li>
                 </ul>
     
               </div>
             </div>
           </nav></div>
         <div class="container">
-            <button id="goBackButton" class="btn btn-primary btn-danger" style="margin-top: 1%;" onclick="redirectToMainPage()">вернуться на главную</button>
             <h1 class="text-center text-dark">Бронирование номеров</h1>
-            
             <div class="tab-content text-center">
                 <div id="rooms" class="tab-pane active">
                     <h2>Выбор номера</h2>
@@ -147,9 +148,6 @@
                 
             </div>
     <script>
-        function redirectToMainPage() {
-    window.location.href = "index.html";
-}
         function submitBookingAndShowLoadingScreen() {
     submitBooking();
     showLoadingScreen(3000); // Укажите необходимое время загрузки здесь

@@ -329,3 +329,20 @@ body {
   height: auto;
   border-radius: 10px;
   }
+  .carousel-inner img {
+    height: 600px; /* Задайте желаемую высоту для изображений */
+    width: auto; /* Автоматическая ширина для поддержки изображений различных ширины */
+    object-fit: cover; /* Заполнение изображения в контейнере с сохранением пропорций */
+}
+.check-element {
+  display: flex;
+  align-items: center;
+}
+.bathroom-item {
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 15.5rem;
+  height: 3.5rem;
+}
