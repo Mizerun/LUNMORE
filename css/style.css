@@ -348,13 +348,35 @@ body {
 }
 .modal-dialog1{max-width:var(--bs-modal-width);margin-right:auto;margin-left:auto;--bs-modal-width:500px;}
 .d-block{height: 10rem;}
- .thumbnail {
-            width: 100px;
-            height: 75px;
-            margin: 5px;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-        .thumbnail.active {
-            border: 2px solid blue;
-        }
+ 
+
+.carousel {
+    width: 80%;
+    max-width: 600px;
+}
+
+.thumbnails-container {
+    width: 100%;
+    overflow-x: auto; /* Горизонтальная прокрутка */
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: flex-start; /* Выравнивание по началу контейнера */
+    white-space: nowrap; /* Запрещает перенос строк */
+}
+
+.thumbnail {
+    width: 100px;
+    height: 75px;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    flex-shrink: 0; /* Запрещает уменьшение миниатюр */
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover, .thumbnail.active {
+    border-color: #000;
+    transform: scale(1.1); /* Увеличение при наведении */
+}
