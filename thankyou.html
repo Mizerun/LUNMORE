@@ -7,9 +7,15 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container pt-5">
+<div class="container pt-5 text-center">
     <h1>Благодарим за ожидание</h1>
     <p>Вам придет сообщение на электронную почту с чеком, а также информация о заселении в наш отель.</p>
+    <button type="button" class="btn btn-outline-secondary" onclick="goBack()">Вернуться на главную</button>
 </div>
+<script>
+    function goBack() {
+    window.location.href = 'index.html';
+}
+</script>
 </body>
 </html>
