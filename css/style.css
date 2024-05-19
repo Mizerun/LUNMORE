@@ -358,3 +358,5 @@ body {
 .thumbnail.active {
     border: 2px solid blue;
 }
+.btn-outline-dark {
+background-color:#bba0a0;;}

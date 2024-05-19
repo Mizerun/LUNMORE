@@ -138,7 +138,7 @@
                 </div>
     
                 <div class="btn-group mt-4 col-12" style="padding: 1rem; ">
-                    <button type="button" class="btn btn-outline-dark" style="border-radius: 6px;" onclick="submitBookingAndShowLoadingScreen()" id="booking-submit-button"><span id="total-price"></span></button>
+                    <button type="button" class="btn btn-outline-dark" style="border-radius: 6px;" onclick="validateAndSubmit()" id="booking-submit-button"><span id="total-price"></span></button>
                     <div class="loading-overlay" id="loading-overlay" style="display: none;">
                         <div class="spinner-border text-light" role="status"></div>
                         <div>Пожалуйста, подождите...</div>
@@ -148,6 +148,18 @@
                 
             </div>
     <script>
+        function validateAndSubmit() {
+    const roomType = document.getElementById('room-type').value;
+    const checkInDate = document.getElementById('check-in').value;
+    const checkOutDate = document.getElementById('check-out').value;
+    const guestsCount = document.getElementById('guests').value;
+    
+    if (!roomType || !checkInDate || !checkOutDate || !guestsCount) {
+        alert('Пожалуйста, заполните все поля перед подтверждением бронирования.');
+    } else {
+        submitBookingAndShowLoadingScreen();
+    }
+}
         function submitBookingAndShowLoadingScreen() {
     submitBooking();
     showLoadingScreen(3000); // Укажите необходимое время загрузки здесь
@@ -188,7 +200,7 @@ function calculateTotalPrice() {
     
     const totalPrice = stayDuration * (roomPrice + servicesPrice) + extraGuestsFee;
     
-    document.getElementById('total-price').textContent = `Забронировать. Цена: $${isNaN(totalPrice) ? '0' : totalPrice} `;
+    document.getElementById('total-price').textContent = `Забронировать. Цена: ${isNaN(totalPrice) ? '0' : totalPrice}руб.`;
 }
     
         function submitBooking() {
