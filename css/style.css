@@ -349,8 +349,8 @@ body {
 .modal-dialog1{max-width:var(--bs-modal-width);margin-right:auto;margin-left:auto;--bs-modal-width:500px;}
 .d-block{height: 10rem;}
 .thumbnail {
-    width: 100px;
-    height: 75px;
+    width: 10%;
+    height: 10%;
     margin: 5px;
     cursor: pointer;
     border: 2px solid transparent;

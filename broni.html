@@ -67,19 +67,19 @@
                         <label for="room-type">Тип номера:</label>
                         <select id="room-type" class="form-control text-center" onchange="calculateTotalPrice()">
                             <optgroup label="Эконом">
-                                <option value="economy-room1" data-price="50">Эконом - Номер 1 ($50)</option>
-                                <option value="economy-room2" data-price="60">Эконом - Номер 2 ($60)</option>
-                                <option value="economy-room3" data-price="70">Эконом - Номер 3 ($70)</option>
+                                <option value="economy-room1" data-price="5000">Двухместный (Стандартный двухместный номер «Пента» с 1 кроватью) 5000р.</option>
+                                <option value="economy-room2" data-price="6000">Двухместный (Стандартный номер Penta с 2 отдельными кроватями). 6000р.</option>
+                                <option value="economy-room3" data-price="70">Двухместный (Номер «Пента Плюс»). 7000р.</option>
                             </optgroup>
                             <optgroup label="Стандарт">
-                                <option value="standard-room1" data-price="100">Стандарт - Номер 1 ($100)</option>
-                                <option value="standard-room2" data-price="110">Стандарт - Номер 2 ($110)</option>
-                                <option value="standard-room3" data-price="120">Стандарт - Номер 3 ($120)</option>
+                                <option value="standard-room1" data-price="9000">Двухместный (Премиум Делюкс) 9000р.</option>
+                                <option value="standard-room2" data-price="10000">Двухместный (Делюкс с одной большой кроватью) 10000р.</option>
+                                <option value="standard-room3" data-price="12000">Двухместный (Делюкс с двумя раздельными кроватями) 11000р.</option>
                             </optgroup>
                             <optgroup label="Люкс">
-                                <option value="luxury-room1" data-price="200">Люкс - Номер 1 ($200)</option>
-                                <option value="luxury-room2" data-price="220">Люкс - Номер 2 ($220)</option>
-                                <option value="luxury-room3" data-price="250">Люкс - Номер 3 ($250)</option>
+                                <option value="luxury-room1" data-price="14000">De Luxe (С 1 кроватью размера «king-size») 14000р.</option>
+                                <option value="luxury-room2" data-price="16000">Сьюит (Полулюкс) 16000р.</option>
+                                <option value="luxury-room3" data-price="20000">Люкс (Премьер Люкс) 20000р.</option>
                             </optgroup>
                         </select>
                     </div>
@@ -91,23 +91,23 @@
         <label>Выберите услуги:</label>
         <div class="container">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="services" id="breakfast" value="breakfast" data-price="15" onchange="calculateTotalPrice()">
-                <label class="form-check-label" for="breakfast">Завтрак</label>
+                <input class="form-check-input" type="checkbox" name="services" id="breakfast" value="breakfast" data-price="1650" onchange="calculateTotalPrice()">
+                <label class="form-check-label" for="breakfast">Завтрак (1650р.)</label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="services" id="parking" value="parking" data-price="20" onchange="calculateTotalPrice()">
-                <label class="form-check-label" for="parking">Парковка</label>
+                <input class="form-check-input" type="checkbox" name="services" id="parking" value="parking" data-price="500" onchange="calculateTotalPrice()">
+                <label class="form-check-label" for="parking">Парковка (500р.)</label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="services" id="spa" value="spa" data-price="30" onchange="calculateTotalPrice()">
-                <label class="form-check-label" for="spa">СПА</label>
+                <input class="form-check-input" type="checkbox" name="services" id="spa" value="spa" data-price="2500" onchange="calculateTotalPrice()">
+                <label class="form-check-label" for="spa">СПА (2500р.)</label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="services" id="gym" value="gym" data-price="25" onchange="calculateTotalPrice()">
-                <label class="form-check-label" for="gym">Фитнес-зал</label>
+                <input class="form-check-input" type="checkbox" name="services" id="gym" value="gym" data-price="1700" onchange="calculateTotalPrice()">
+                <label class="form-check-label" for="gym">Фитнес-зал (1700р.)</label>
             </div>
         </div>
     </div>
