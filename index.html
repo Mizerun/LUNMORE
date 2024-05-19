@@ -592,50 +592,54 @@
       </div> 
     </div></div>
     <img src="./img/grisha.png" alt="" class="lalala1">
-<div class="container mt-5" id="commentaries">
-    <div class="h3 text-center">Будем очень рады, если вы оставите комментарий о нашем отеле!</div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="comment-container" id="comments">
-              <div class="comment-box">
-                <strong>Администратор</strong> (admin@lunmorehotel.com): Добро пожаловать на сайт Hotel Lunmore! Будем рады видеть ваши комментарии.
-                <br>
-                <img src="./img/logo.png" alt="Admin avatar" class="preview-img">
-            </div>
-            <div class="comment-box">
-                <strong>Гость</strong> (morehotel@lun.com): Прекрасное место для отдыха и релаксации. Очень уютная атмосфера!
-                <br>
-                <img src="./img/logo.png" alt="Guest avatar" class="preview-img">
-            </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <h4>Оставить комментарий</h4>
-            <form id="commentForm">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Имя</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="comment" class="form-label">Комментарий</label>
-                    <textarea class="form-control" id="comment" rows="3" required></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="photo" class="form-label">Загрузить фото</label>
-                    <input type="file" class="form-control" id="photo" accept="image/*" onchange="previewImage(event)">
-                    <img id="preview" class="preview-img" src="#" alt="Image preview" style="display: none;">
-                </div>
-                <div class="center-button">
-                    <button type="submit" class="btn btn-outline-secondary">Отправить комментарий</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+    <div class="container mt-5" id="commentaries">
+      <div class="h3 text-center">Будем очень рады, если вы оставите комментарий о нашем отеле!</div>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="comment-container" id="comments">
+                  <div class="comment-box">
+                      <strong>Михаил Горбачев</strong> (mihailg@mail.ru): Прекрасный отель, атмосфера, отзывчивый персонал, еще не раз сюда приедем!!
+                      <br>
+                      <img src="./img/comm.jpg" alt="Admin avatar" class="preview-img">
+                  </div>
+                  <div class="comment-box">
+                      <strong>Гость</strong> (morehotel@lun.com): Прекрасное место для отдыха и релаксации. Очень уютная атмосфера!
+                      <br>
+                      <img src="./img/logo.png" alt="Guest avatar" class="preview-img">
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <h4>Оставить комментарий</h4>
+              <form id="commentForm">
+                  <div class="mb-3">
+                      <label for="name" class="form-label">Имя</label>
+                      <input type="text" class="form-control" id="name" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="rating" class="form-label">Оценка (от 1 до 5 звезд)</label>
+                      <input type="number" class="form-control" id="rating" min="1" max="5" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="comment" class="form-label">Комментарий</label>
+                      <textarea class="form-control" id="comment" rows="3" required></textarea>
+                  </div>
+                  <div class="mb-3">
+                      <label for="photo" class="form-label">Загрузить фото</label>
+                      <input type="file" class="form-control" id="photo" accept="image/*" onchange="previewImage(event)">
+                      <img id="preview" class="preview-img" src="#" alt="Image preview" style="display: none;">
+                  </div>
+                  <div class="center-button">
+                      <button type="submit" class="btn btn-outline-secondary">Отправить комментарий</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
 <!-- модальные окна номеров -->
 <!-- 1 -->
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
@@ -4255,62 +4259,66 @@ function scrollToTop() {
             window.location.href = 'broni.html?checkIn=' + checkInDate + '&checkOut=' + checkOutDate + '&guests=' + guestsCount;
         }
         document.getElementById("commentForm").addEventListener("submit", function(event) {
-        event.preventDefault();
+    event.preventDefault();
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const commentText = document.getElementById("comment").value;
-        const photo = document.getElementById("preview").src;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const rating = document.getElementById("rating").value;
+    const commentText = document.getElementById("comment").value;
+    const photo = document.getElementById("preview").src;
 
-        const newComment = `
-        <div class="comment-box">
-            <strong>${name}</strong> (${email}): ${commentText}
-            <br>
-            <img src="${photo}" alt="Uploaded photo" class="preview-img">
-        </div>`;
+    const newComment = `
+    <div class="comment-box">
+        <strong>${name}</strong> (${email}): ${commentText}
+        <br>
+        <div>Оценка: ${rating} звезд</div>
+        <img src="${photo}" alt="Uploaded photo" class="preview-img">
+    </div>`;
 
-        const commentsContainer = document.getElementById("comments");
-        commentsContainer.insertAdjacentHTML("beforeend", newComment);
-        
-        // Clear form fields
-        document.getElementById("commentForm").reset();
-        document.getElementById("preview").style.display = "none";
+    const commentsContainer = document.getElementById("comments");
+    commentsContainer.insertAdjacentHTML("beforeend", newComment);
+    
+    // Сбрасываем поля формы
+    document.getElementById("commentForm").reset();
+    document.getElementById("preview").style.display = "none";
 
-        // Save comment to localStorage
-        const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
-        existingComments.push(newComment);
-        localStorage.setItem("comments", JSON.stringify(existingComments));
+    // Сохраняем комментарий в localStorage
+    const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
+    existingComments.push(newComment);
+    localStorage.setItem("comments", JSON.stringify(existingComments));
 
-        // Load and display all comments
-        commentsContainer.innerHTML = "";
-        existingComments.forEach(comment => {
-            commentsContainer.insertAdjacentHTML("beforeend", comment);
-        });
+    // Загружаем и отображаем все комментарии
+    commentsContainer.innerHTML = "";
+    existingComments.forEach(comment => {
+        commentsContainer.insertAdjacentHTML("beforeend", comment);
     });
+});
 
-    window.addEventListener("DOMContentLoaded", function() {
-        const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
-        const commentsContainer = document.getElementById("comments");
+// Загружаем комментарии из localStorage при загрузке страницы
+window.addEventListener("DOMContentLoaded", function() {
+    const existingComments = JSON.parse(localStorage.getItem("comments")) || [];
+    const commentsContainer = document.getElementById("comments");
 
-        existingComments.forEach(comment => {
-            commentsContainer.insertAdjacentHTML("beforeend", comment);
-        });
+    existingComments.forEach(comment => {
+        commentsContainer.insertAdjacentHTML("beforeend", comment);
     });
+});
 
-    function previewImage(event) {
-        const preview = document.getElementById("preview");
-        const file = event.target.files[0];
-        const reader = new FileReader();
+// Функция предварительного просмотра изображения перед загрузкой
+function previewImage(event) {
+    const preview = document.getElementById("preview");
+    const file = event.target.files[0];
+    const reader = new FileReader();
 
-        reader.onload = function() {
-            preview.src = reader.result;
-            preview.style.display = "block";
-        };
+    reader.onload = function() {
+        preview.src = reader.result;
+        preview.style.display = "block";
+    };
 
-        if (file) {
-            reader.readAsDataURL(file);
-        }
+    if (file) {
+        reader.readAsDataURL(file);
     }
+}
     </script>
 </body>
 </html>
