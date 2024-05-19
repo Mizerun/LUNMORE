@@ -587,9 +587,9 @@
       <h3 class="text-white">Контакты</h3>
       <div class="row text-white">
         <div class="col-md-4 contact-info">Телефон: +7 (999) 769-54-34</div>
-        <div class="col-md-4 contact-info">Почта: example@example.com</div>
+        <div class="col-md-4 contact-info">Почта: lunmore@lun.com</div>
         <div class="col-md-4 contact-info">Местоположение: Адрес отеля, Город, Страна</div>
-      </div>
+      </div> 
     </div></div>
     <img src="./img/grisha.png" alt="" class="lalala1">
 <div class="container mt-5" id="commentaries">
@@ -689,7 +689,7 @@
             <h5 class="modal-title" id="fullScreenModalLabel0">Увеличенные изображения</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body w-100 h-100">
             <div id="fullScreenCarousel0" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -4161,9 +4161,25 @@
   <!-- 9 -->
                   <!-- модальные окна номеров -->
 <br>
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Наверх">🔼</button>
 <img src="./img/grisha2.png" alt="" class="lalala22">
 <div class="border6"></div>
     <script>
+      
+      window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+        document.getElementById("scrollToTopBtn").style.display = "block";
+    } else {
+        document.getElementById("scrollToTopBtn").style.display = "none";
+    }
+}
+
+function scrollToTop() {
+    document.body.scrollTop = 0; // Для Safari
+    document.documentElement.scrollTop = 0; // Для других браузеров
+}
       $(document).ready(function () {
     function setCarouselHandlers(carouselId, modalId, carouselModalId) {
         $(`#${carouselId}`).on('slide.bs.carousel', function (e) {
