@@ -3748,12 +3748,14 @@
         $('.thumbnail').on('click', function () {
             var index = $(this).data('bs-slide-to');
             $('#carouselExampleInterval7').carousel(index);
+            $('#fullScreenModal').modal('show');
+            $('#fullScreenCarousel').carousel(index);
         });
 
-        $('.thumbnail').on('click', function () {
-            var src = $(this).attr('src');
-            $('#fullScreenModal').modal('show');
-            $('#fullScreenCarousel').carousel($(this).data('bs-slide-to'));
+        $('#fullScreenModal').on('slide.bs.carousel', function (e) {
+            var index = $(e.relatedTarget).index();
+            $('.thumbnail').removeClass('active');
+            $('.thumbnail').eq(index).addClass('active');
         });
     let currentIndex = 0;
     const images = ['./img/rest.png', './img/bar.jpg'];
