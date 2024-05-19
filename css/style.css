@@ -348,7 +348,7 @@ body {
 }
 .modal-dialog1{max-width:var(--bs-modal-width);margin-right:auto;margin-left:auto;--bs-modal-width:500px;}
 .d-block{height: 10rem;}
-.thumbnail {
+ .thumbnail {
             width: 100px;
             height: 75px;
             margin: 5px;
