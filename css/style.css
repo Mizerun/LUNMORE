@@ -147,7 +147,7 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    max-height: 300px;
+    max-height: 500px;
     overflow: auto;
 }
 
@@ -379,4 +379,11 @@ background-color:#bba0a0;;}
 #scrollToTopBtn.show {
     opacity: 1;
     visibility: visible;
+}
+.content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
